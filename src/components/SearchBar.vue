@@ -14,11 +14,8 @@
     </ul>
   </div>
 </template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
-
-// Variables reactivas
 const query = ref('')
 const results = ref<string[]>([])
 const allResults = [
@@ -27,8 +24,6 @@ const allResults = [
   'Proyectos de Alejandro Chavarría',
   '¿Cómo contactar a Alejandro Chavarría?',
 ]
-
-// Método de búsqueda
 const search = () => {
   if (query.value) {
     results.value = allResults.filter((result) =>
@@ -39,16 +34,15 @@ const search = () => {
   }
 }
 </script>
-
 <style scoped>
 .searchbar-container {
-  position: relative; /* Añadir posición relativa */
+  position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 50%;
 }
-
+input {
+  outline: none;
+}
 .search-input {
   width: 100%;
   padding: 1rem;
@@ -56,27 +50,38 @@ const search = () => {
   border: none;
   border-radius: 2rem;
   background-color: #383838;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
 }
-
+.search-input:hover {
+  background-color: #505050;
+  transition: background-color 0.2s;
+}
 .results-list {
-  position: absolute; /* Añadir posición absoluta */
-  top: 60%;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 104%;
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
+  margin: 0;
+  border-radius: 0 0 1rem 1rem;
+  background: #383838;
   z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
 }
-
 .result-item {
   padding: 10px;
-  border-bottom: 1px solid #eee;
-  color: #333;
+  color: #dddddd;
+  border-top: 1px solid #505050;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
-
-.result-item:last-child {
-  border-bottom: none;
+.result-item:hover {
+  background-color: #505050;
+  color: #ffffff;
 }
 </style>
