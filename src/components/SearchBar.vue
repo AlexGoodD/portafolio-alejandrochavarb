@@ -1,15 +1,18 @@
 <template>
   <div class="searchbar-container">
-    <input
-      type="text"
-      v-model="query"
-      @input="search"
-      placeholder="Buscar en Google"
-      class="search-input"
-    />
+    <div class="search-input-wrapper">
+      <input
+        type="text"
+        v-model="query"
+        @input="search"
+        placeholder="Alejandro Chavarría..."
+        :class="results.length ? 'search-input results-open' : 'search-input'"
+      />
+      <i v-if="query" class="fa-solid fa-x clear-icon" @click="clearSearch"></i>
+    </div>
     <ul v-if="results.length" class="results-list">
       <li v-for="result in results" :key="result" class="result-item">
-        {{ result }}
+        <a :href="getResultLink(result)">{{ result }}</a>
       </li>
     </ul>
   </div>
@@ -33,15 +36,38 @@ const search = () => {
     results.value = []
   }
 }
+const clearSearch = () => {
+  query.value = ''
+  results.value = []
+}
+const getResultLink = (result: string) => {
+  switch (result) {
+    case '¿Alejandro Chavarría quién es?':
+      return '/'
+    case '¿Que tecnologías usa Alejandro Chavarría?':
+      return '/Technologies'
+    case 'Proyectos de Alejandro Chavarría':
+      return '/Projects'
+    case '¿Cómo contactar a Alejandro Chavarría?':
+      return '/Contact'
+    default:
+      return '#'
+  }
+}
 </script>
 <style scoped>
+@import '@fortawesome/fontawesome-free/css/all.css';
 .searchbar-container {
   position: relative;
+  width: 50%;
+}
+.input-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 50%;
 }
 input {
   outline: none;
+  display: flex;
 }
 .search-input {
   width: 100%;
@@ -52,36 +78,53 @@ input {
   background-color: #383838;
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
+  transition: background-color 0.2s;
 }
 .search-input:hover {
   background-color: #505050;
-  transition: background-color 0.2s;
+}
+.clear-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: small;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.5;
+}
+.results-open {
+  border-radius: 2rem 2rem 0 0;
 }
 .results-list {
-  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
-  top: 100%;
   left: 0;
-  width: 104%;
+  width: 100%;
   list-style: none;
-  padding: 0;
   margin: 0;
   border-radius: 0 0 1rem 1rem;
   background: #383838;
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
+  padding: 1rem;
 }
 .result-item {
-  padding: 10px;
+  padding: 0.5rem 0;
+  width: 100%;
   color: #dddddd;
-  border-top: 1px solid #505050;
   cursor: pointer;
   transition:
     background-color 0.2s,
     color 0.2s;
 }
 .result-item:hover {
-  background-color: #505050;
   color: #ffffff;
+}
+li a {
+  color: inherit;
+  text-decoration: none;
+}
+li :active {
+  color: inherit;
 }
 </style>

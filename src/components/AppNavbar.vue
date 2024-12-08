@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="handleClickOutside">
     <nav class="navbar">
       <div class="navbar-content">
         <div class="search-bar">
@@ -29,11 +29,15 @@
             </li>
           </div>
           <li class="more-menu">
-            <div class="dropdown-container">
+            <div class="dropdown-container" ref="dropdownMenu">
               <button @click="toggleMoreMenu"><i class="fas fa-ellipsis-v"></i> Más</button>
               <ul v-if="showMoreMenu" class="dropdown-menu">
-                <li class="item1"><router-link to="#item1">Descargar CV en pdf</router-link></li>
-                <li class="item2"><router-link to="#item2">Linkedin</router-link></li>
+                <li class="item1"><a href="/path/to/CV.pdf" download>Descargar CV en pdf</a></li>
+                <li class="item2">
+                  <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
               </ul>
             </div>
           </li>
@@ -43,21 +47,28 @@
     <div class="content"></div>
   </div>
 </template>
-
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SearchBar from './SearchBar.vue'
-
 const showMoreMenu = ref(false)
-
+const dropdownMenu = ref<HTMLElement | null>(null)
 const toggleMoreMenu = () => {
   showMoreMenu.value = !showMoreMenu.value
 }
+const handleClickOutside = (event: MouseEvent) => {
+  if (dropdownMenu.value && !dropdownMenu.value.contains(event.target as Node)) {
+    showMoreMenu.value = false
+  }
+}
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
-
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
-
 .navbar {
   position: fixed;
   top: 0;
@@ -68,18 +79,15 @@ const toggleMoreMenu = () => {
   border-bottom: 1px solid #ccc;
   color: white;
 }
-
 .content {
   padding-top: 10%;
 }
-
 .navbar-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
 }
-
 .search-bar {
   width: 100%;
   display: flex;
@@ -87,29 +95,24 @@ const toggleMoreMenu = () => {
   align-items: flex-start;
   margin-bottom: 2%;
 }
-
 .navbar-menu {
   margin: 0;
   padding: 0;
   display: flex;
   list-style-type: none;
 }
-
 .navbar-selector {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-
 .navbar-selector li {
   margin-left: 30px;
 }
-
 .more-menu {
   margin-left: 50px;
 }
-
 .navbar-menu li a {
   color: #9d9d9d;
   text-decoration: none;
@@ -117,28 +120,22 @@ const toggleMoreMenu = () => {
   transition: color 0.2s;
   padding: 15px 0;
 }
-
 .navbar-selector li a i {
   margin-right: 10px;
 }
-
 .navbar-menu li a:hover {
   color: #d0d0d0;
 }
-
 .navbar-menu li a.active-link {
   color: #81acec;
 }
-
 .active-link {
   color: #81acec;
   border-bottom: 3px solid #81acec;
 }
-
 .more-menu .dropdown-container {
   position: relative;
 }
-
 .more-menu button {
   background: none;
   border: none;
@@ -146,7 +143,6 @@ const toggleMoreMenu = () => {
   cursor: pointer;
   font-size: 14px;
 }
-
 .more-menu .dropdown-menu {
   position: absolute;
   top: 150%;
@@ -161,7 +157,6 @@ const toggleMoreMenu = () => {
   width: 10vw;
   margin-left: 0;
 }
-
 .more-menu .dropdown-menu li a {
   color: #9d9d9d;
   padding: 10px 20px;
@@ -172,7 +167,6 @@ const toggleMoreMenu = () => {
     background-color 0.2s,
     color 0.2s;
 }
-
 .dropdown-menu li a:hover {
   color: #d0d0d0;
 }

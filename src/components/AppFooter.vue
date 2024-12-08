@@ -1,14 +1,11 @@
 <template>
   <div>
     <nav class="footer">
-      <!-- Contenido del footer -->
       <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
     </nav>
   </div>
 </template>
-
 <script setup lang="ts"></script>
-
 <style scoped>
 .footer {
   position: fixed;
@@ -21,8 +18,7 @@
   padding: 1rem;
   z-index: 1000;
 }
-
 .content {
-  padding-bottom: 60px; /* Ajusta este valor según la altura de tu footer */
+  padding-bottom: 60px;
 }
 </style>
