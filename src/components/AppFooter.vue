@@ -8,7 +8,7 @@
 <script setup lang="ts"></script>
 <style scoped>
 .footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -17,6 +17,7 @@
   text-align: center;
   padding: 1rem;
   z-index: 1000;
+  margin-top: 10rem;
 }
 .content {
   padding-bottom: 60px;

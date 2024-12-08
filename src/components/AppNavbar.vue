@@ -3,6 +3,7 @@
     <nav class="navbar">
       <div class="navbar-content">
         <div class="search-bar">
+          <img src="../assets/Googol.svg" alt="Logo" class="site-logo" />
           <SearchBar />
         </div>
         <ul class="navbar-menu">
@@ -35,7 +36,7 @@
                 <li class="item1"><a href="/path/to/CV.pdf" download>Descargar CV en pdf</a></li>
                 <li class="item2">
                   <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank"
-                    >LinkedIn</a
+                    >Visitar LinkedIn</a
                   >
                 </li>
               </ul>
@@ -75,12 +76,19 @@ onBeforeUnmount(() => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 2rem 5rem 1rem 5rem;
-  border-bottom: 1px solid #ccc;
+  padding: 2rem 0 1rem 3rem;
+  border-bottom: 1px solid #5a5a5a;
   color: white;
+  background-color: #232323;
 }
 .content {
   padding-top: 10%;
+}
+.site-logo {
+  width: 9%;
+  height: 9%;
+  margin-right: 3%;
+  margin-top: 0.5rem;
 }
 .navbar-content {
   display: flex;
@@ -97,7 +105,7 @@ onBeforeUnmount(() => {
 }
 .navbar-menu {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 10rem;
   display: flex;
   list-style-type: none;
 }
