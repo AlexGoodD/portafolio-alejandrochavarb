@@ -1,7 +1,25 @@
 <template>
   <div>
     <nav class="footer">
-      <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
+      <div class="footer-content">
+        <div class="footer-searchs">
+          <p id="text">Los resultados están personalizados</p>
+          <p>-</p>
+          <p id="resalt">Probar sin personalización</p>
+        </div>
+        <div class="footer-ubication">
+          <p id="semibold">México</p>
+          <p id="text">San Nicolás de los Garza, Nuevo Léon</p>
+        </div>
+        <div class="footer-extra" id="semibold">
+          <ul>
+            <li>Ayuda</li>
+            <li>Enviar comentarios</li>
+            <li>Privacidad</li>
+            <li>Condiciones</li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </div>
 </template>
@@ -12,14 +30,56 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: #181818;
   color: white;
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   z-index: 1000;
   margin-top: 10rem;
 }
-.content {
-  padding-bottom: 60px;
+.footer-content {
+  padding: 0 14rem;
+  font-size: 0.9rem;
+}
+.footer-searchs {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer-ubication {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.footer-extra {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.footer-extra ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section {
+  flex: 1;
+}
+#semibold {
+  color: #9d9d9d;
+}
+.footer-extra li {
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+.footer-extra li:hover {
+  color: #d0d0d0;
+}
+#resalt {
+  color: #81acec;
+  cursor: pointer;
+}
+#text {
+  color: #cccccc;
 }
 </style>

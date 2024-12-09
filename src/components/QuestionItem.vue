@@ -43,7 +43,7 @@ function toggleAnswer() {
 }
 .question-answer {
   padding: 0 0.5rem;
-  color: #d2d2d2;
+  color: #e5e5e5;
 }
 .fas {
   transition:

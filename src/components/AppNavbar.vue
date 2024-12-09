@@ -129,7 +129,7 @@ onBeforeUnmount(() => {
   padding: 15px 0;
 }
 .navbar-selector li a i {
-  margin-right: 10px;
+  margin-right: 0.3rem;
 }
 .navbar-menu li a:hover {
   color: #d0d0d0;
