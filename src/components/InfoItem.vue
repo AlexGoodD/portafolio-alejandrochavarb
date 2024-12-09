@@ -15,7 +15,7 @@
         -->
         <div class="site-preview-info">
           <p class="site-shortname">Desarrolladores web</p>
-          <p class="site-url">https:</p>
+          <p class="site-url">https://www.desarrolladoresweb.com > blog > Alejandro-Chavarria...</p>
         </div>
       </div>
       <p class="site-name">¿Quién es Alejandro Chavarría? - Desarrolladores web</p>
@@ -23,9 +23,12 @@
     <hr />
   </div>
 </template>
+
 <script setup lang="ts"></script>
+
 <style scoped>
 .info-item {
+  /* border: 1px solid #ccc; */
   margin-top: -1.5rem;
   padding: 1rem 14.5rem;
   border-radius: 8px;
@@ -33,34 +36,41 @@
   width: 40%;
   cursor: pointer;
 }
+
 .title {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: #d9d9d9;
 }
+
 .search-results {
   list-style-type: disc;
   padding: 0 1.2rem;
   color: #d9d9d9;
 }
+
 .result-item {
   font-size: 1.25rem;
   margin: 5px 0;
 }
+
 .site-shortname {
   font-size: 1.2rem;
   color: #fff;
 }
+
 .site-url {
   margin-top: -1rem;
   color: #d2d2d2;
 }
+
 .site-name {
   margin-top: -0.5rem;
   padding: 0;
   font-size: 1.4rem;
   color: #81acec;
 }
+
 hr {
   margin-top: -1rem;
   color: #5a5a5a;
