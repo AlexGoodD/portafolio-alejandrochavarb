@@ -1,21 +1,29 @@
 <template>
   <div
-    class="carousel-container"
-    :class="{
-      'no-left-shadow': !showLeftButton,
-      'no-right-shadow': !showRightButton,
-    }"
+    :class="[
+      'carousel-container',
+      { 'no-left-shadow': !showLeftButton, 'no-right-shadow': !showRightButton },
+    ]"
   >
-    <button v-if="showLeftButton" class="scroll-button left" @click="scrollLeft">←</button>
-    <div class="carousel" ref="carousel">
-      <div v-for="item in items" :key="item.id" class="carousel-item">
+    <button v-if="showLeftButton" class="scroll-button left" @click="scrollLeft">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="carousel" ref="carousel" @scroll="updateScrollPositions">
+      <div
+        v-for="item in items"
+        :key="item.id"
+        class="carousel-item"
+        @click="handleItemClick(item)"
+      >
         <img v-if="item.image" :src="item.image" class="carousel-image" />
         <div :class="['carousel-text', { 'no-image': !item.image }]">
           {{ item.text }}
         </div>
       </div>
     </div>
-    <button v-if="showRightButton" class="scroll-button right" @click="scrollRight">→</button>
+    <button v-if="showRightButton" class="scroll-button right" @click="scrollRight">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
 </template>
 <script setup lang="ts">
@@ -29,9 +37,14 @@ const items = ref([
     id: 5,
     image: 'https://i.ibb.co/pvdxf1H/164306020-120e8664-cb5b-459a-80a3-99e13b057b52.png',
     text: 'Certificado en Scrum Fundamentals',
+    url: 'https://www.flipsnack.com/CAC98ECC5A8/certificado-de-scrum-de-alejandro-chavarria/full-view.html',
   },
   { id: 6, text: 'Aplicación subida en la PlayStore' },
-  { id: 7, text: 'Certificado con Alura Latam + Oracle' },
+  {
+    id: 7,
+    text: 'Certificado con Alura Latam + Oracle',
+    url: 'https://www.flipsnack.com/CAC98ECC5A8/certificado-alura-cursos-de-alejandro-chavarria/full-view.html',
+  },
   { id: 8, text: 'Conocimientos en MySQL & Firebase' },
   { id: 9, text: 'Técnico en programación' },
 ])
@@ -56,6 +69,11 @@ const scrollRight = () => {
 }
 const showLeftButton = computed(() => currentScrollPosition.value > 0)
 const showRightButton = computed(() => currentScrollPosition.value < maxScrollPosition.value)
+const handleItemClick = (item: { url?: string }) => {
+  if (item.url) {
+    window.open(item.url, '_blank')
+  }
+}
 onMounted(() => {
   if (carousel.value) {
     carousel.value.addEventListener('scroll', updateScrollPositions)
@@ -64,6 +82,7 @@ onMounted(() => {
 })
 </script>
 <style scoped>
+@import '@fortawesome/fontawesome-free/css/all.css';
 .carousel-container {
   position: relative;
   display: flex;
@@ -82,7 +101,7 @@ onMounted(() => {
 }
 .carousel-item {
   flex: 0 0 auto;
-  width: 180px;
+  width: 190px;
   height: 60px;
   margin-right: 10px;
   border-radius: 1rem;

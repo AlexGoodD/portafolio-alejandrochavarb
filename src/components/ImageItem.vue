@@ -3,8 +3,9 @@
     <div class="image-container">
       <img :src="image.src" :alt="image.title" />
     </div>
-    <div class="image-title">
-      <p>{{ props.image.title }}</p>
+    <div class="image-info">
+      <p class="title">{{ props.image.title }}</p>
+      <p class="description">{{ props.image.description }}</p>
     </div>
   </div>
 </template>
@@ -37,16 +38,14 @@ const props = defineProps({
   border: 2px solid transparent;
   padding: 0.5rem;
   border-radius: 1rem;
+  transition: box-shadow 0.5s ease;
+}
+.image-item:hover {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
 }
 .image-item.selected {
   border-color: rgb(176, 199, 255);
   background-color: rgba(51, 78, 107, 0.511);
-}
-.image-item p {
-  transition: color 0.3s ease;
-}
-.image-item p:hover {
-  color: #a8a8a8;
 }
 .image-container {
   width: 100%;
@@ -56,7 +55,7 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  background-color: #282828;
+  background-color: #2a2a2e;
 }
 .image-item img {
   width: 100%;
@@ -67,7 +66,13 @@ const props = defineProps({
 .image-item img:hover {
   transform: scale(1.01);
 }
-.image-title {
+.title {
+  font-size: 0.8rem;
   color: #818181;
+  margin-bottom: -0.8rem;
+}
+.description {
+  font-size: 0.9rem;
+  color: #c0c0c0;
 }
 </style>

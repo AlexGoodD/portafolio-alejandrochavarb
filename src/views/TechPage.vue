@@ -1,5 +1,19 @@
 <template>
   <div>
-    <h1>Bienvenido a la página de tecnologías</h1>
+    <div class="carrousel-container">
+      <Carrousel />
+    </div>
+    <ImageGallery />
   </div>
 </template>
+
+<script setup lang="ts">
+import ImageGallery from '../components/ImageGallery.vue'
+import Carrousel from '../components/TechCarrousel.vue'
+</script>
+
+<style scoped>
+.carrousel-container {
+  padding: 1rem;
+}
+</style>

@@ -40,12 +40,12 @@ const updateImage = (image: Image) => {
 </script>
 <style scoped>
 .image-gallery {
-  padding: 1%;
+  padding: 1% 3% 1% 1%;
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 .image-gallery.modal-active {
-  margin-right: 30%;
+  margin-right: 45%;
 }
 .image-grid {
   display: grid;
