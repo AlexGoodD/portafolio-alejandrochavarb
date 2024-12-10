@@ -26,15 +26,14 @@
 <script setup lang="ts"></script>
 <style scoped>
 .footer {
-  position: static;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background-color: #181818;
   color: white;
   text-align: left;
   padding: 1rem;
   z-index: 1000;
+  width: 100%;
+  position: relative;
+  bottom: 0;
   margin-top: 10rem;
 }
 .footer-content {
