@@ -17,17 +17,38 @@ import { ref } from 'vue'
 import QuestionItem from '../components/QuestionItem.vue'
 const questions = ref([
   {
-    title: '¿Dónde puedo descargar el CV de Alejandro Chavarría?',
-    answer: 'Aquí está el enlace al CV: https://alejandro-chavarria.github.io/cv/CV.pdf',
+    title: '¿Dónde puedo ver el CV de Alejandro Chavarría?',
+    answer:
+      'Aquí está el enlace al CV: <a href="https://alejandro-chavarria.github.io/cv/CV.pdf" target="_blank">CV de Alejandro Chavarria</a>',
   },
   {
     title: '¿Qué herramientas se utilizaron para la creación de este portafolio?',
-    answer: 'Se usaron tecnologías como Vue.js, TypeScript y Vite.',
+    answer: 'Se usaron Vue.js con TypeScript, Vite, imgbb API',
   },
   {
     title: '¿Por donde puedo contactar a Alejandro Chavarría?',
     answer:
-      'Puedes contactar a Alejandro Chavarría a través de LinkedIn: https://www.linkedin.com/in/alejandro-chavarb',
+      'A través de LinkedIn: <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">Alejandro Chavarria</a>',
+  },
+  {
+    title: '¿Qué tipo de proyectos desarrolla Alejandro Chavarría?',
+    answer:
+      'Alejandro se especializa en proyectos web responsivos, aplicaciones de una sola página (SPA) y plataformas dinámicas',
+  },
+  {
+    title: '¿Dónde puedo encontrar el repositorio del código de este portafolio?',
+    answer:
+      'El código fuente del portafolio está disponible en GitHub: <a href="https://github.com/AlexGoodD/portafolio-alejandrochavarb" target="_blank">Repositorio de este portafolio</a>',
+  },
+  {
+    title: '¿Cuáles son los proyectos más destacados de Alejandro Chavarría?',
+    answer:
+      'MoonHike, UanLog, CowTrack. Puedes consultar mas proyectos destacados en la sección de proyectos de este portafolio',
+  },
+  {
+    title: '¿Alejandro Chavarría ofrece servicios freelance?',
+    answer:
+      'Sí, Alejandro está disponible para proyectos freelance. Puedes contactarlo directamente a través de <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">LinkedIn</a> o <a href="mailto:alejandrochavarb@gmail.com">correo electrónico</a>',
   },
 ])
 </script>

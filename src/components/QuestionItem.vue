@@ -5,7 +5,7 @@
       <i :class="{ rotated: isOpen }" class="fas fa-chevron-down"></i>
     </div>
     <div v-if="isOpen" class="question-answer">
-      <p>{{ props.answer }}</p>
+      <p v-html="props.answer"></p>
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@ function toggleAnswer() {
   margin-bottom: 10px;
   overflow: hidden;
   border-bottom: 1px solid #5a5a5a;
+  transition: transform 0.5s ease-in-out;
 }
 .question-title {
   padding: 1rem 0.5rem;

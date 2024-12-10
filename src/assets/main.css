@@ -13,3 +13,14 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.question-answer a {
+  color: #81acec;
+  transition: color 0.5s ease;
+  text-decoration: none;
+}
+
+.question-answer a:hover {
+  color: #9fbeee;
+  text-decoration: underline;
+}

@@ -71,6 +71,10 @@
   color: #81acec;
 }
 
+.site-name:hover {
+  text-decoration: underline;
+}
+
 hr {
   margin-top: -1rem;
   color: #5a5a5a;
