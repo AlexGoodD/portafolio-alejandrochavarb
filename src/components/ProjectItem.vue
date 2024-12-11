@@ -18,11 +18,13 @@
       </h3>
       <p class="description">{{ props.project.description }}</p>
       <p class="year">{{ props.project.year }}</p>
-      <div class="technologies">
+      <div class="info-technologies">
         <li class="fas fa-tag"></li>
-        <span v-for="tech in props.project.technologies" :key="tech" class="technology">{{
-          tech
-        }}</span>
+        <div class="technologies">
+          <span v-for="tech in props.project.technologies" :key="tech" class="technology">{{
+            tech
+          }}</span>
+        </div>
       </div>
     </div>
     <div class="image-container">
@@ -54,6 +56,7 @@ const goToRepo = () => {
   justify-content: space-between;
   cursor: pointer;
   transition: transform 0.5s ease;
+  overflow: hidden;
 }
 .project-item:hover {
   transform: scale(1.02);
@@ -72,7 +75,54 @@ const goToRepo = () => {
   margin-top: 8px;
   color: #909090;
   font-size: 0.8rem;
+  overflow-x: auto;
+  min-width: 100%; /* Asegura que tenga al menos el ancho del contenedor padre */
+  white-space: nowrap;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
+.technologies::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.info-technologies {
+  color: #909090;
+  width: 100%; /* o auto, según sea necesario */
+  align-items: center;
+  display: inline-flex;
+}
+
+.info-technologies li {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+  .description {
+    display: none;
+  }
+
+  .info-technologies {
+    display: none;
+  }
+}
+
+@media (max-width: 1165px) {
+  .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 690px) {
+  .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 10rem;
+  }
+}
+
 .technology {
   padding: 0.3rem 1rem;
   border-radius: 1rem;

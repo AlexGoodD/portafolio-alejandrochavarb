@@ -15,6 +15,26 @@ const projects = ref(sortedProjects)
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 1rem 30rem 1rem 14rem;
+  padding: 0 30rem 1rem 14rem;
+  transition: padding 0.5s ease;
+}
+
+@media (max-width: 1439px) {
+  .project-section {
+    padding: 0rem 29rem 1rem 13rem;
+  }
+}
+
+@media (max-width: 1165px) {
+  .project-section {
+    padding: 0rem 20rem 1rem 11rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .project-section {
+    padding: 0rem 0;
+    justify-content: center;
+  }
 }
 </style>
