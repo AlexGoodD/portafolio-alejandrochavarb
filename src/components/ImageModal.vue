@@ -137,8 +137,8 @@ onBeforeUnmount(() => {
   max-height: 100%;
 }
 .modal.fixed-to-navbar {
-  top: 59%;
-  height: 85%;
+  top: 50%;
+  height: 90%;
 }
 .modal-active .modal {
   transform: translateY(-50%) translateX(0);
