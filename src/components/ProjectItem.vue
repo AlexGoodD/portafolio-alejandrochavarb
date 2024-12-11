@@ -98,7 +98,7 @@ const goToRepo = () => {
 
 @media (max-width: 800px) {
   .description {
-    display: none;
+    display: list-item;
   }
 
   .info-technologies {
@@ -119,6 +119,9 @@ const goToRepo = () => {
   .project-item {
     flex-direction: column;
     padding: 0;
+  }
+  .description {
+    display: list-item;
   }
 }
 
