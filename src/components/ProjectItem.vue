@@ -121,7 +121,7 @@ const goToRepo = () => {
     padding: 0;
   }
   .description {
-    display: list-item;
+    display: flex;
   }
 }
 

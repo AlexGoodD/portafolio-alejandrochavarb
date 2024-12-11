@@ -27,7 +27,7 @@ const projects = ref(sortedProjects)
 
 @media (max-width: 1165px) {
   .project-section {
-    padding: 0rem 20rem 1rem 11rem;
+    padding: 0rem 10rem 1rem 8rem;
   }
 }
 
