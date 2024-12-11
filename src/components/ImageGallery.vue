@@ -44,6 +44,15 @@ const updateImage = (image: Image) => {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
+
+@media (min-width: 2271px) {
+  .image-gallery {
+    padding: 1% 1% 1% 1%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
 .image-gallery.modal-active {
   margin-right: 45%;
 }
@@ -53,7 +62,15 @@ const updateImage = (image: Image) => {
   gap: 20px;
   grid-auto-rows: 250px;
   flex-grow: 1;
+  transition: grid-template-columns 0.5s ease-in-out;
 }
+
+@media (max-width: 1120px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
 .image-item {
   width: 100%;
   height: 100%;
