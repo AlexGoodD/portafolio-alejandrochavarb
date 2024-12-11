@@ -66,7 +66,7 @@ export const images: Image[] = [
   },
   {
     id: '8',
-    src: 'https://thumbs.dreamstime.com/z/html-logo-editorial-ilustrativo-sobre-fondo-blanco-eps-descargar-vector-jpeg-banner-208329416.jpg',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s',
     title: 'HTML',
     description: 'Lenguaje estándar para la estructura y contenido de páginas web',
     categories: ['Desarrollo Frontend', 'Web'],
