@@ -118,7 +118,7 @@ const goToRepo = () => {
 @media (max-width: 690px) {
   .project-item {
     flex-direction: column;
-    padding: 1rem 10rem;
+    padding: 0;
   }
 }
 

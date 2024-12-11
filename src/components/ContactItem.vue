@@ -97,11 +97,9 @@ img:hover {
   color: #c5c3c3;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 455px) {
   .contact-item {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
   }
 }
 

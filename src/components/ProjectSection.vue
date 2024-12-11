@@ -33,8 +33,9 @@ const projects = ref(sortedProjects)
 
 @media (max-width: 690px) {
   .project-section {
-    padding: 1rem 20rem 0 0;
     justify-content: center;
+    padding: 0;
+    margin: 0;
   }
 }
 </style>

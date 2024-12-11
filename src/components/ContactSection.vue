@@ -46,7 +46,7 @@ const contacts = ref(sortedContacts)
 @media (max-width: 690px) {
   .contact-section {
     justify-content: center;
-    padding: 1rem 5rem;
+    padding: 0;
   }
 }
 </style>
