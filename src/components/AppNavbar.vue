@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -80,9 +80,7 @@ onBeforeUnmount(() => {
   border-bottom: 1px solid #5a5a5a;
   color: white;
   background-color: #232323;
-}
-.content {
-  padding-top: 10%;
+  transition: padding 0.5s ease;
 }
 .site-logo {
   width: 9%;
@@ -105,10 +103,41 @@ onBeforeUnmount(() => {
 }
 .navbar-menu {
   margin: 0;
-  padding: 0 0 0 10rem;
+  padding: 0 0 0 11%;
   display: flex;
   list-style-type: none;
+  transition: padding 0.5s ease;
 }
+
+@media (max-width: 830px) {
+  .navbar-menu {
+    padding: 0 0 0 10%;
+  }
+}
+
+@media (max-width: 660px) {
+  .navbar-menu {
+    width: 75%;
+    padding: 0 0 0 8%;
+  }
+
+  .navbar {
+    padding: 2rem 0 1rem 5%;
+  }
+
+  .navbar-selector {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .navbar-selector::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
 .navbar-selector {
   display: flex;
   flex-direction: row;

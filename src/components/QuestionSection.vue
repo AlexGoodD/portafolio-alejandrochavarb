@@ -58,7 +58,40 @@ const questions = ref([
   padding: 1rem 14rem;
   width: 45%;
   margin-top: 1rem;
+  transition:
+    padding 0.5s ease,
+    width 0.5s ease,
+    margin-top 0.5s ease;
 }
+
+@media (min-width: 1680px) {
+  .question-section {
+    width: 850px;
+    padding: 1rem 13.5%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1679px) {
+  .question-section {
+    width: 45%;
+    padding: 1rem 15%;
+  }
+}
+
+@media (min-width: 826px) and (max-width: 900px) {
+  .question-section {
+    width: 70%;
+    padding: 1rem 19%;
+  }
+}
+
+@media (max-width: 825px) {
+  .question-section {
+    width: 73%;
+    padding: 1rem 14%;
+  }
+}
+
 .question-title {
   display: flex;
   align-items: center;

@@ -35,11 +35,39 @@
   position: relative;
   bottom: 0;
   margin-top: 10rem;
+  transition: padding 0.5s ease;
 }
+
+@media (max-width: 1250px) {
+  .footer {
+    padding: 1rem 0;
+  }
+}
+
 .footer-content {
   padding: 0 14rem;
   font-size: 0.9rem;
+  transition: padding 0.5s ease;
 }
+
+@media (min-width: 1680px) {
+  .footer-content {
+    padding: 0 300px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .footer-content {
+    padding: 0 12rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+    padding: 0 7rem;
+  }
+}
+
 .footer-searchs {
   display: flex;
   gap: 0.5rem;

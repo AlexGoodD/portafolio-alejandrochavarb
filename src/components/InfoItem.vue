@@ -30,11 +30,43 @@
 .info-item {
   /* border: 1px solid #ccc; */
   margin-top: -1.5rem;
-  padding: 1rem 14.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 16%;
+  margin-right: auto;
   width: 40%;
   cursor: pointer;
+  transition:
+    padding 0.5s ease,
+    margin-left 0.5s ease,
+    margin-right 0.5s ease,
+    width 0.5s ease;
+}
+@media (min-width: 1680px) {
+  .info-item {
+    width: 600px;
+    margin-left: 14%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1679px) {
+  .info-item {
+    width: 600px;
+    margin-left: 16%;
+  }
+}
+
+@media (min-width: 826px) and (max-width: 900px) {
+  .info-item {
+    width: 70%;
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 825px) {
+  .info-item {
+    width: 70%;
+  }
 }
 
 .title {
