@@ -8,9 +8,9 @@
       <p class="description">{{ props.contact.description }}</p>
       <div class="social-media">
         <span class="site">{{ props.contact.socialMedia }}</span>
-        <span class="dot"></span>
+        <span class="dot" id="dot-1"></span>
         <span class="user">{{ props.contact.userName }}</span>
-        <span class="dot"></span>
+        <span class="dot" id="dot-2"></span>
         <span class="month-year">{{ props.contact.month }} {{ props.contact.year }}</span>
       </div>
     </div>
@@ -31,7 +31,7 @@ const goToContact = () => {
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .contact-item {
-  padding: 0 1rem;
+  padding: 0;
   margin: 16px 0;
   border-radius: 1rem;
   display: flex;
@@ -96,7 +96,44 @@ img:hover {
 .description {
   color: #c5c3c3;
 }
-.year {
-  color: #909090;
+
+@media (max-width: 450px) {
+  .contact-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 510px) {
+  .site {
+    display: none;
+  }
+
+  #dot-1 {
+    display: none;
+  }
+}
+
+@media (max-width: 625px) {
+  .description {
+    display: none;
+  }
+  .month-year {
+    display: none;
+  }
+
+  #dot-2 {
+    display: none;
+  }
+}
+
+@media (max-width: 1165px) {
+  .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
 }
 </style>
