@@ -33,7 +33,9 @@
             <div class="dropdown-container" ref="dropdownMenu">
               <button @click="toggleMoreMenu"><i class="fas fa-ellipsis-v"></i> Más</button>
               <ul v-if="showMoreMenu" class="dropdown-menu">
-                <li class="item1"><a href="/path/to/CV.pdf" download>Descargar CV en pdf</a></li>
+                <li class="item1">
+                  <a href="src/assets/Alejandro_Chavarria_CV.pdf" download>Descargar CV en pdf</a>
+                </li>
                 <li class="item2">
                   <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank"
                     >Visitar LinkedIn</a

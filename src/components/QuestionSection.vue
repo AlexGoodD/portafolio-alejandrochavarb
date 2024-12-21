@@ -19,7 +19,7 @@ const questions = ref([
   {
     title: '¿Dónde puedo ver el CV de Alejandro Chavarría?',
     answer:
-      'Aquí está el enlace al CV: <a href="https://alejandro-chavarria.github.io/cv/CV.pdf" target="_blank">CV de Alejandro Chavarria</a>',
+      'Aquí está el enlace al CV: <a href="https://drive.google.com/file/d/1xw2PsbmsAQ_oiippHu81JCbQ9S7VvwNl/view?usp=share_link" target="_blank">CV de Alejandro Chavarria</a>',
   },
   {
     title: '¿Qué herramientas se utilizaron para la creación de este portafolio?',
