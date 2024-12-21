@@ -23,7 +23,8 @@ const questions = ref([
   },
   {
     title: '¿Qué herramientas se utilizaron para la creación de este portafolio?',
-    answer: 'Se usaron Vue.js con TypeScript, Vite, imgbb API',
+    answer:
+      'Se usaron Vue.js con TypeScript para el desarrollo del frontend, Vite como el bundler, y la API de imgbb para el manejo de imágenes. Además, se utilizó Firebase para el hosting.',
   },
   {
     title: '¿Por donde puedo contactar a Alejandro Chavarría?',

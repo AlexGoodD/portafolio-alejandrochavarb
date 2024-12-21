@@ -12,6 +12,7 @@
       <div
         v-for="item in items"
         :key="item.id"
+        :class="{ 'has-url': item.url }"
         class="carousel-item"
         @click="handleItemClick(item)"
       >
@@ -37,13 +38,14 @@ const items = ref([
     id: 5,
     image: 'https://i.ibb.co/pvdxf1H/164306020-120e8664-cb5b-459a-80a3-99e13b057b52.png',
     text: 'Certificado en Scrum Fundamentals',
-    url: 'https://www.flipsnack.com/CAC98ECC5A8/certificado-de-scrum-de-alejandro-chavarria/full-view.html',
+    url: 'https://drive.google.com/file/d/1qaDCVjlU_u-2C1cq4AbfJNvumDmmR24p/view',
   },
   { id: 6, text: 'Aplicación subida en la PlayStore' },
   {
     id: 7,
+    image: 'https://i.ibb.co/MsLwZfk/alura-share-1730889068.png',
     text: 'Certificado con Alura Latam + Oracle',
-    url: 'https://www.flipsnack.com/CAC98ECC5A8/certificado-alura-cursos-de-alejandro-chavarria/full-view.html',
+    url: 'https://drive.google.com/file/d/1D81IxCjBF-BUl8XaX-wlTKDbKUl8Ndek/view',
   },
   { id: 8, text: 'Conocimientos en MySQL & Firebase' },
   { id: 9, text: 'Técnico en programación' },
@@ -101,7 +103,7 @@ onMounted(() => {
 }
 .carousel-item {
   flex: 0 0 auto;
-  width: 190px;
+  width: 210px;
   height: 60px;
   margin-right: 10px;
   border-radius: 1rem;
@@ -112,8 +114,13 @@ onMounted(() => {
   align-items: center;
   justify-content: flex-start;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.carousel-item.has-url {
   cursor: pointer;
 }
+
 .carousel-image {
   width: 30%;
   height: 100%;
