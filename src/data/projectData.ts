@@ -85,5 +85,17 @@ const projects: Project[] = [
     largeImage: 'path/to/large-image5.jpg',
     repoURL: 'https://github.com/AlexGoodD/PocketPal',
   },
+  {
+    title: 'TaskDone',
+    year: 2024,
+    description:
+      'Aplicación móvil para iOS que te ayuda a gestionar tareas fácilmente. Organiza tus pendientes mediante categorías.',
+    technologies: ['Swift', 'Xcode', 'Git'],
+    tags: ['Desarrollo móvil', 'iOS', 'iPadOS'],
+    smallImage: 'https://i.ibb.co/VDzGgXc/TaskDone.png',
+    largeImage: 'path/to/large-image5.jpg',
+    repoURL: 'https://github.com/AlexGoodD/TaskDone',
+    isOnline: false,
+  },
 ]
 export default projects
