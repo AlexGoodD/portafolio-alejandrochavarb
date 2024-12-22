@@ -1,45 +1,51 @@
-# portafolio-alejandrochavarb
+# Portafolio de Alejandro Chavarría
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto es un portafolio personal desarrollado con Vue 3 y Vite. Aquí podrás encontrar información sobre mis habilidades, proyectos y experiencia.
 
-## Recommended IDE Setup
+## Requisitos del Sistema
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Node.js >= 14.0.0
+- npm >= 6.0.0
 
-## Type Support for `.vue` Imports in TS
+## Configuración Recomendada del IDE
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Se recomienda utilizar [VSCode](https://code.visualstudio.com/) con las siguientes extensiones:
 
-## Customize configuration
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (y desactivar Vetur)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Soporte de Tipos para Importaciones de `.vue` en TS
 
-## Project Setup
+TypeScript no puede manejar la información de tipos para importaciones de `.vue` por defecto, por lo que reemplazamos el CLI `tsc` con `vue-tsc` para la comprobación de tipos. En los editores, necesitamos [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) para hacer que el servicio de lenguaje TypeScript sea consciente de los tipos `.vue`.
 
-```sh
-npm install
+## Personalizar Configuración
+
+Consulta la [Referencia de Configuración de Vite](https://vite.dev/config/).
+
+## Estructura del Proyecto
+
+```plaintext
+.
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── data/
+│   ├── router/
+│   ├── views/
+│   ├── App.vue
+│   ├── main.ts
+│   └── ...
+├── public/
+├── .editorconfig
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── ...
 ```
 
-### Compile and Hot-Reload for Development
+## Contacto
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Puedes ponerte en contacto conmigo a través de [LinkedIn](https://www.linkedin.com/in/alejandro-chavarb) o [correo electrónico](mailto:alejandrochavarb@gmail.com).
