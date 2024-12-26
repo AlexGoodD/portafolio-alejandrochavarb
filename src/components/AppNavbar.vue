@@ -5,6 +5,18 @@
         <div class="search-bar">
           <img src="../assets/Googol.svg" alt="Logo" class="site-logo" />
           <SearchBar />
+          <div class="navbar-buttons">
+            <li>
+              <button @click="toggleTheme" class="theme-button">
+                <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+              </button>
+            </li>
+            <li>
+              <button @click="toggleLanguage" class="language-button">
+                {{ language === 'es' ? 'EN' : 'ES' }}
+              </button>
+            </li>
+          </div>
         </div>
         <ul class="navbar-menu">
           <div class="navbar-selector">
@@ -55,6 +67,9 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SearchBar from './SearchBar.vue'
 const showMoreMenu = ref(false)
 const dropdownMenu = ref<HTMLElement | null>(null)
+const theme = ref('dark')
+const language = ref('es')
+
 const toggleMoreMenu = () => {
   showMoreMenu.value = !showMoreMenu.value
 }
@@ -63,6 +78,17 @@ const handleClickOutside = (event: MouseEvent) => {
     showMoreMenu.value = false
   }
 }
+
+const toggleTheme = () => {
+  theme.value = theme.value === 'dark' ? 'light' : 'dark'
+  document.documentElement.setAttribute('data-theme', theme.value)
+}
+
+const toggleLanguage = () => {
+  language.value = language.value === 'es' ? 'en' : 'es'
+  // Aquí puedes agregar la lógica para cambiar el idioma de la aplicación
+}
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })
@@ -111,6 +137,24 @@ onBeforeUnmount(() => {
   transition: padding 0.5s ease;
 }
 
+li {
+  list-style: none;
+}
+
+.navbar-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.theme-button,
+.language-button {
+  background: none;
+  border: none;
+  color: #9d9d9d;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 1rem;
+}
 @media (max-width: 830px) {
   .navbar-menu {
     padding: 0 0 0 10%;
