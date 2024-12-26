@@ -50,7 +50,7 @@ export const images: Image[] = [
   },
   {
     id: '6',
-    src: 'https://cdn-knihf.nitrocdn.com/ibKONdxVNJApfXYlVVFSuGXgWUgPJrvN/assets/images/optimized/rev-f36b800/kodigowebstorage.blob.core.windows.net/kodigowebsite/2023/08/csharp.png',
+    src: 'https://blog.facialix.com/wp-content/uploads/2024/03/c-sharp-curso-gratuito.jpg',
     title: 'C#',
     description: 'Lenguaje de programación orientado a objetos',
     categories: ['Desarrollo Backend'],
