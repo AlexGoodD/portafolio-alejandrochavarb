@@ -5,6 +5,7 @@
         <div class="search-bar">
           <img src="../assets/Googol.svg" alt="Logo" class="site-logo" />
           <SearchBar />
+          <!--
           <div class="navbar-buttons">
             <li>
               <button @click="toggleTheme" class="theme-button">
@@ -17,6 +18,8 @@
               </button>
             </li>
           </div>
+
+-->
         </div>
         <ul class="navbar-menu">
           <div class="navbar-selector">
@@ -67,8 +70,8 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SearchBar from './SearchBar.vue'
 const showMoreMenu = ref(false)
 const dropdownMenu = ref<HTMLElement | null>(null)
-const theme = ref('dark')
-const language = ref('es')
+//const theme = ref('dark')
+//const language = ref('es')
 
 const toggleMoreMenu = () => {
   showMoreMenu.value = !showMoreMenu.value
@@ -79,15 +82,15 @@ const handleClickOutside = (event: MouseEvent) => {
   }
 }
 
+/*
 const toggleTheme = () => {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
   document.documentElement.setAttribute('data-theme', theme.value)
 }
-
 const toggleLanguage = () => {
   language.value = language.value === 'es' ? 'en' : 'es'
-  // Aquí puedes agregar la lógica para cambiar el idioma de la aplicación
 }
+  */
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
