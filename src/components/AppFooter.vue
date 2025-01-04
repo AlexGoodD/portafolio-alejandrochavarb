@@ -69,37 +69,24 @@ const text6 = computed(() => {
   width: 100%;
   position: relative;
   bottom: 0;
-  margin-top: 10rem;
+  margin-top: 15rem;
   transition: padding 0.5s ease;
-}
-
-@media (max-width: 1250px) {
-  .footer {
-    padding: 1rem 0;
-  }
 }
 
 .footer-content {
-  padding: 0 14rem;
-  font-size: 0.9rem;
-  transition: padding 0.5s ease;
+  margin-left: 220px;
+  margin-right: auto;
+  transition: all 0.5s ease;
 }
 
-@media (min-width: 1680px) {
+@media (max-width: 830px) {
   .footer-content {
-    padding: 0 300px;
+    margin-left: 130px;
   }
 }
-
-@media (max-width: 1250px) {
+@media (max-width: 650px) {
   .footer-content {
-    padding: 0 12rem;
-  }
-}
-
-@media (max-width: 800px) {
-  .footer-content {
-    padding: 0 7rem;
+    margin-left: 60px;
   }
 }
 
