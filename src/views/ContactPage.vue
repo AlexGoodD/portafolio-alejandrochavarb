@@ -30,34 +30,19 @@ const searchText = computed(() => {
 <style scoped>
 .info-search {
   color: #9d9d9d;
-  transition:
-    margin-left 0.5s ease,
-    margin-right 0.5s ease,
-    margin-top 0.5s ease;
+  margin-left: 240px;
+
+  transition: all 0.5s ease;
 }
 
-@media (min-width: 1680px) {
+@media (max-width: 830px) {
   .info-search {
-    margin-left: 14%;
+    margin-left: 155px;
   }
 }
-
-@media (min-width: 901px) and (max-width: 1679px) {
+@media (max-width: 650px) {
   .info-search {
-    margin-left: 16%;
-  }
-}
-
-@media (min-width: 826px) and (max-width: 900px) {
-  .info-search {
-    margin-left: 20%;
-  }
-}
-
-@media (max-width: 825px) {
-  .info-search {
-    margin-left: 15%;
-    margin-right: auto;
+    margin-left: 75px;
   }
 }
 </style>
