@@ -75,13 +75,13 @@ input {
   font-size: 16px;
   border: none;
   border-radius: 2rem;
-  background-color: #383838;
-  color: #fff;
+  background-color: var(--searchbar-search-input-background-color);
+  color: var(--searchbar-search-input-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
   transition: background-color 0.2s;
 }
 .search-input:hover {
-  background-color: #505050;
+  background-color: var(--searchbar-search-input-hover-background-color);
 }
 .clear-icon {
   position: absolute;
@@ -90,7 +90,7 @@ input {
   transform: translateY(-50%);
   font-size: small;
   cursor: pointer;
-  color: #fff;
+  color: var(--searchbar-search-input-color);
   opacity: 0.5;
 }
 .results-open {
@@ -103,7 +103,7 @@ input {
   list-style: none;
   margin: 0;
   border-radius: 0 0 1rem 1rem;
-  background: #383838;
+  background: var(--searchbar-search-input-background-color);
   z-index: 999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
   padding: 1rem;
@@ -111,7 +111,7 @@ input {
 .result-item {
   padding: 0.5rem 0;
   width: 100%;
-  color: #dddddd;
+  color: var(--searchbar-result-item-color);
   cursor: pointer;
   transition:
     background-color 0.2s,

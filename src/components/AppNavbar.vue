@@ -95,12 +95,14 @@ const handleClickOutside = (event: MouseEvent) => {
   }
 }
 
+const emit = defineEmits(['theme-changed', 'language-changed'])
+
 const toggleTheme = () => {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
   document.documentElement.setAttribute('data-theme', theme.value)
+  localStorage.setItem('theme', theme.value)
+  emit('theme-changed', theme.value)
 }
-
-const emit = defineEmits(['language-changed'])
 
 const toggleLanguage = () => {
   language.value = language.value === 'es' ? 'en' : 'es'
@@ -128,7 +130,7 @@ onBeforeUnmount(() => {
   padding: 2rem 3rem 1rem 3rem;
   border-bottom: 1px solid #5a5a5a;
   color: white;
-  background-color: #232323;
+  background-color: var(--navbar-background-color);
   transition: padding 0.5s ease;
   align-items: center;
 }
@@ -261,11 +263,11 @@ li {
   color: #d0d0d0;
 }
 .navbar-menu li a.active-link {
-  color: #81acec;
+  color: var(--navbar-menu-li-a-active-link-color);
 }
 .active-link {
-  color: #81acec;
-  border-bottom: 3px solid #81acec;
+  color: var(--navbar-menu-active-link-color);
+  border-bottom: 3px solid var(--navbar-menu-active-link-border-bottom);
 }
 .more-menu .dropdown-container {
   position: relative;

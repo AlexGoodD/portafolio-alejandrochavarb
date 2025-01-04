@@ -61,8 +61,8 @@ const text6 = computed(() => {
 </script>
 <style scoped>
 .footer {
-  background-color: #181818;
-  color: white;
+  background-color: var(--footer-background-color);
+  color: var(--footer-color);
   text-align: left;
   padding: 1rem;
   z-index: 1000;
@@ -138,10 +138,10 @@ const text6 = computed(() => {
   color: #d0d0d0;
 }
 #resalt {
-  color: #81acec;
+  color: var(--footer-link-color);
   cursor: pointer;
 }
 #text {
-  color: #cccccc;
+  color: var(--footer-color);
 }
 </style>
