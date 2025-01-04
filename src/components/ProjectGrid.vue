@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { defineProps } from 'vue'
 import { projectsEn } from '../data/projectsData'
 
 const props = defineProps({

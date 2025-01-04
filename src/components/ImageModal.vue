@@ -28,8 +28,8 @@
         </span>
       </div>
       <div class="more-buttons">
-        <button class="share"><i class="fas fa-share-nodes"></i> Compartir</button>
-        <button class="save"><i class="fas fa-bookmark"></i> Guardar</button>
+        <button class="share"><i class="fas fa-share-nodes"></i> {{ buttonShare }}</button>
+        <button class="save"><i class="fas fa-bookmark"></i> {{ buttonSave }}</button>
       </div>
       <div class="project-grid-container">
         <ProjectGrid :technology="props.image.title" />
@@ -59,6 +59,14 @@ const descriptionText = computed(() => {
   return props.language === 'es'
     ? 'Los proyectos los puedes visualizar a detalle en la'
     : 'You can view the projects in detail at'
+})
+
+const buttonShare = computed(() => {
+  return props.language === 'es' ? 'Compartir' : 'Share'
+})
+
+const buttonSave = computed(() => {
+  return props.language === 'es' ? 'Guardar' : 'Save'
 })
 
 const routerLinkText = computed(() => {
