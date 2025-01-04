@@ -4,7 +4,7 @@
     <main class="main-content">
       <router-view :language="language" />
     </main>
-    <Footer />
+    <Footer :language="language" />
   </div>
 </template>
 
