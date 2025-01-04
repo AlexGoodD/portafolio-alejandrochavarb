@@ -79,17 +79,6 @@ const text6 = computed(() => {
   transition: all 0.5s ease;
 }
 
-@media (max-width: 830px) {
-  .footer-content {
-    margin-left: 130px;
-  }
-}
-@media (max-width: 650px) {
-  .footer-content {
-    margin-left: 60px;
-  }
-}
-
 .footer-searchs {
   display: flex;
   gap: 0.5rem;
@@ -130,5 +119,26 @@ const text6 = computed(() => {
 }
 #text {
   color: var(--footer-color);
+}
+
+@media (max-width: 830px) {
+  .footer-content {
+    margin-left: 130px;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer-content {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-content {
+    margin-left: 0;
+  }
+  .footer-extra {
+    display: none;
+  }
 }
 </style>

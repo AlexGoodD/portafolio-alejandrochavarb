@@ -223,11 +223,12 @@ li {
   gap: 15px;
 }
 
-@media (max-width: 355px) {
-  .navbar-buttons {
+@media (max-width: 400px) {
+  .theme-button {
     display: none;
   }
 }
+
 .theme-button,
 .language-button {
   background: none;
