@@ -1,12 +1,4 @@
-export interface Image {
-  id: string
-  src: string
-  title: string
-  description: string
-  categories: string[]
-  type: 'square' | 'rectangular'
-}
-export const images: Image[] = [
+export const imagesEs = [
   {
     id: '1',
     src: 'https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png',
@@ -102,6 +94,105 @@ export const images: Image[] = [
     title: 'Dart',
     description: 'Lenguaje optimizado para aplicaciones móviles y web con alto rendimiento',
     categories: ['Desarrollo Frontend', 'Mutiplataforma'],
+    type: 'square',
+  },
+]
+
+export const imagesEn = [
+  {
+    id: '1',
+    src: 'https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png',
+    title: 'Flutter',
+    description: 'Cross-platform framework for mobile development',
+    categories: ['Mobile Development', 'Cross-Platform'],
+    type: 'square',
+  },
+  {
+    id: '2',
+    src: 'https://crocoapps.com/upload/iblock/af8/preview.jpg',
+    title: 'Swift',
+    description: 'Modern and optimized language for app development in the Apple ecosystem',
+    categories: ['Mobile Development', 'Apple Ecosystem'],
+    type: 'rectangular',
+  },
+  {
+    id: '3',
+    src: 'https://firebase.google.com/images/social.png',
+    title: 'Firebase',
+    description: 'Platform for mobile and web application development',
+    categories: ['Databases', 'Backend Development'],
+    type: 'rectangular',
+  },
+  {
+    id: '4',
+    src: 'https://matiasarevalo.com/wp-content/uploads/2024/07/git.jpg',
+    title: 'Git',
+    description: 'Distributed version control system',
+    categories: ['Development Tool'],
+    type: 'square',
+  },
+  {
+    id: '5',
+    src: 'https://cdn.prod.website-files.com/61ddd0b42c51f89b7de1e910/6697e5d740fe5643dd61fbbc_6697e36f9a2e61c3f9a3c850_SQL.jpeg',
+    title: 'SQL',
+    description: 'Structured query language for databases',
+    categories: ['Databases', 'Backend Development'],
+    type: 'rectangular',
+  },
+  {
+    id: '6',
+    src: 'https://blog.facialix.com/wp-content/uploads/2024/03/c-sharp-curso-gratuito.jpg',
+    title: 'C#',
+    description: 'Object-oriented programming language',
+    categories: ['Backend Development'],
+    type: 'square',
+  },
+  {
+    id: '7',
+    src: 'https://wptavern.com/wp-content/uploads/2018/11/Screen-Shot-2018-11-19-at-8.43.27-PM.png',
+    title: 'Figma',
+    description: 'Interface design and real-time collaboration tool',
+    categories: ['UX/UI Design', 'Collaboration'],
+    type: 'rectangular',
+  },
+  {
+    id: '8',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s',
+    title: 'HTML',
+    description: 'Standard language for structuring and content of web pages',
+    categories: ['Frontend Development', 'Web'],
+    type: 'square',
+  },
+  {
+    id: '9',
+    src: 'https://logowik.com/content/uploads/images/123_css3.jpg',
+    title: 'CSS',
+    description: 'Styles web pages with responsive and attractive designs',
+    categories: ['Frontend Development', 'Web Styles'],
+    type: 'square',
+  },
+  {
+    id: '10',
+    src: 'https://d8285fmxt3duy.cloudfront.net/public/articulos/img/java-script1.jpg',
+    title: 'JavaScript',
+    description: 'Versatile language for adding interactivity to web pages and applications',
+    categories: ['Frontend Development', 'Backend Development', 'Interactivity'],
+    type: 'rectangular',
+  },
+  {
+    id: '11',
+    src: 'https://cms.rootstack.com/sites/default/files/inline-images/01-vuejs.jpg',
+    title: 'Vue.js',
+    description: 'Progressive framework for building dynamic user interfaces',
+    categories: ['Frontend Development', 'Framework'],
+    type: 'rectangular',
+  },
+  {
+    id: '12',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58DYxWj7WBQUuApDSU-GRNUuD9u6e_v6Kuw&s',
+    title: 'Dart',
+    description: 'Optimized language for high-performance mobile and web applications',
+    categories: ['Frontend Development', 'Cross-Platform'],
     type: 'square',
   },
 ]
