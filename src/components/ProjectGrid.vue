@@ -11,23 +11,28 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import { defineProps } from 'vue'
-import projectData from '../data/projectData'
+import { projectsEn } from '../data/projectsData'
+
 const props = defineProps({
   technology: {
     type: String,
     required: true,
   },
 })
+
 const filteredProjects = computed(() =>
-  projectData.filter((project) => project.technologies.includes(props.technology)),
+  projectsEn.filter((project) => project.technologies.includes(props.technology)),
 )
+
 const goToRepo = (url: string) => {
   window.open(url, '_blank')
 }
 </script>
+
 <style scoped>
 .project-grid {
   display: grid;

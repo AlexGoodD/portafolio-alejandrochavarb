@@ -14,11 +14,11 @@
       </div>
       <p class="description">{{ props.image.description }}</p>
       <p class="m-description">
-        Los proyectos los puedes visualizar a detalle en la
+        {{ descriptionText }}
         <strong
-          ><RouterLink to="/Projects" class="m-description-router"
-            >sección correspondiente</RouterLink
-          ></strong
+          ><RouterLink to="/Projects" class="m-description-router">
+            {{ routerLinkText }}
+          </RouterLink></strong
         >
       </p>
       <div class="categories">
@@ -38,7 +38,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
 import ProjectGrid from './ProjectGrid.vue'
 const props = defineProps({
   image: {
@@ -49,7 +49,22 @@ const props = defineProps({
     type: Array as () => { id: string; title: string; src: string; description: string }[],
     required: true,
   },
+  language: {
+    type: String,
+    required: true,
+  },
 })
+
+const descriptionText = computed(() => {
+  return props.language === 'es'
+    ? 'Los proyectos los puedes visualizar a detalle en la'
+    : 'You can view the projects in detail at'
+})
+
+const routerLinkText = computed(() => {
+  return props.language === 'es' ? 'sección correspondiente' : 'corresponding section'
+})
+
 const emit = defineEmits(['close', 'update:image'])
 const close = () => {
   emit('close')

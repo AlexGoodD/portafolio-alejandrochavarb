@@ -27,32 +27,31 @@
     </button>
   </div>
 </template>
+
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-const items = ref([
-  { id: 1, image: 'https://i.ibb.co/xJVTRxK/image-76.png', text: 'Aprendiendo React' },
-  { id: 2, text: 'Manejo de Adobe' },
-  { id: 3, text: 'Uso avanzado de paquetería Office' },
-  { id: 4, image: 'https://i.ibb.co/zhfjsX1/images.png', text: 'Prototipado en Figma' },
-  {
-    id: 5,
-    image: 'https://i.ibb.co/pvdxf1H/164306020-120e8664-cb5b-459a-80a3-99e13b057b52.png',
-    text: 'Certificado en Scrum Fundamentals',
-    url: 'https://drive.google.com/file/d/1qaDCVjlU_u-2C1cq4AbfJNvumDmmR24p/view',
+import { ref, computed, onMounted, watch } from 'vue'
+import { itemsEs, itemsEn } from '../data/techData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
   },
-  { id: 6, text: 'Aplicación subida en la PlayStore' },
-  {
-    id: 7,
-    image: 'https://i.ibb.co/MsLwZfk/alura-share-1730889068.png',
-    text: 'Certificado con Alura Latam + Oracle',
-    url: 'https://drive.google.com/file/d/1D81IxCjBF-BUl8XaX-wlTKDbKUl8Ndek/view',
-  },
-  { id: 8, text: 'Conocimientos en MySQL & Firebase' },
-  { id: 9, text: 'Técnico en programación' },
-])
+})
+
+const items = ref(itemsEs)
 const carousel = ref<HTMLElement | null>(null)
 const currentScrollPosition = ref(0)
 const maxScrollPosition = ref(0)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    items.value = newLang === 'es' ? itemsEs : itemsEn
+  },
+  { immediate: true },
+)
+
 const updateScrollPositions = () => {
   if (carousel.value) {
     currentScrollPosition.value = carousel.value.scrollLeft
@@ -76,6 +75,7 @@ const handleItemClick = (item: { url?: string }) => {
     window.open(item.url, '_blank')
   }
 }
+
 onMounted(() => {
   if (carousel.value) {
     carousel.value.addEventListener('scroll', updateScrollPositions)
@@ -83,6 +83,7 @@ onMounted(() => {
   }
 })
 </script>
+
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .carousel-container {

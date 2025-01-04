@@ -3,13 +3,30 @@
     <ProjectItem v-for="project in projects" :key="project.title" :project="project" />
   </div>
 </template>
+
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import ProjectItem from './ProjectItem.vue'
-import projectData from '../data/projectData'
-const sortedProjects = projectData.sort((a, b) => b.year - a.year)
-const projects = ref(sortedProjects)
+import { projectsEs, projectsEn } from '../data/projectsData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
+  },
+})
+
+const projects = ref(projectsEs)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    projects.value = newLang === 'es' ? projectsEs : projectsEn
+  },
+  { immediate: true },
+)
 </script>
+
 <style scoped>
 .project-section {
   display: flex;

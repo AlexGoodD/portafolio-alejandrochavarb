@@ -2,10 +2,9 @@
   <div @click="handleClickOutside">
     <nav class="navbar">
       <div class="navbar-content">
-        <div class="search-bar">
+        <div class="top-bar">
           <img src="../assets/Googol.svg" alt="Logo" class="site-logo" />
           <SearchBar />
-          <!--
           <div class="navbar-buttons">
             <li>
               <button @click="toggleTheme" class="theme-button">
@@ -18,43 +17,45 @@
               </button>
             </li>
           </div>
-
--->
         </div>
         <ul class="navbar-menu">
           <div class="navbar-selector">
             <li>
               <router-link to="/" active-class="active-link">
-                <i class="fas fa-home"></i> Inicio
+                <i class="fas fa-home"></i> {{ translations.home }}
               </router-link>
             </li>
             <li class="item">
               <router-link to="/Technologies" active-class="active-link">
-                <i class="fa-solid fa-gear"></i> Tecnologías
+                <i class="fa-solid fa-gear"></i> {{ translations.technologies }}
               </router-link>
             </li>
             <li>
               <router-link to="/Projects" active-class="active-link">
-                <i class="fa-solid fa-folder"></i> Proyectos
+                <i class="fa-solid fa-folder"></i> {{ translations.projects }}
               </router-link>
             </li>
             <li>
               <router-link to="/Contact" active-class="active-link">
-                <i class="fas fa-envelope"></i> Contacto
+                <i class="fas fa-envelope"></i> {{ translations.contact }}
               </router-link>
             </li>
           </div>
           <li class="more-menu">
             <div class="dropdown-container" ref="dropdownMenu">
-              <button @click="toggleMoreMenu"><i class="fas fa-ellipsis-v"></i> Más</button>
+              <button @click="toggleMoreMenu">
+                <i class="fas fa-ellipsis-v"></i> {{ translations.more }}
+              </button>
               <ul v-if="showMoreMenu" class="dropdown-menu">
                 <li class="item1">
-                  <a href="src/assets/Alejandro_Chavarria_CV.pdf" download>Descargar CV en pdf</a>
+                  <a href="src/assets/Alejandro_Chavarria_CV.pdf" download>{{
+                    translations.downloadCV
+                  }}</a>
                 </li>
                 <li class="item2">
-                  <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank"
-                    >Visitar LinkedIn</a
-                  >
+                  <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">{{
+                    translations.visitLinkedIn
+                  }}</a>
                 </li>
               </ul>
             </div>
@@ -62,43 +63,54 @@
         </ul>
       </div>
     </nav>
-    <div class="content"></div>
   </div>
 </template>
+
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import SearchBar from './SearchBar.vue'
+
 const showMoreMenu = ref(false)
 const dropdownMenu = ref<HTMLElement | null>(null)
-//const theme = ref('dark')
-//const language = ref('es')
+const theme = ref('dark')
+const language = ref('es')
+import { navbarEs, navbarEn } from '../data/navbarData'
+
+const translations = computed(() => {
+  return language.value === 'es' ? navbarEs : navbarEn
+})
 
 const toggleMoreMenu = () => {
   showMoreMenu.value = !showMoreMenu.value
 }
+
 const handleClickOutside = (event: MouseEvent) => {
   if (dropdownMenu.value && !dropdownMenu.value.contains(event.target as Node)) {
     showMoreMenu.value = false
   }
 }
 
-/*
 const toggleTheme = () => {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
   document.documentElement.setAttribute('data-theme', theme.value)
 }
+
+const emit = defineEmits(['language-changed'])
+
 const toggleLanguage = () => {
   language.value = language.value === 'es' ? 'en' : 'es'
+  emit('language-changed', language.value)
 }
-  */
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })
+
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
 </script>
+
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .navbar {
@@ -125,12 +137,12 @@ onBeforeUnmount(() => {
   align-items: flex-start;
   width: 100%;
 }
-.search-bar {
+.top-bar {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2%;
+  gap: 2%;
 }
 .navbar-menu {
   margin: 0;
@@ -145,9 +157,9 @@ li {
 }
 
 .navbar-buttons {
-  display: flex;
+  margin-left: 20%;
   justify-content: flex-end;
-  align-items: center;
+  display: flex;
 }
 .theme-button,
 .language-button {

@@ -16,28 +16,76 @@
       :images="images"
       @close="closeModal"
       @update:image="updateImage"
+      :language="props.language"
     />
   </div>
 </template>
+
 <script setup lang="ts">
-import ImageModal from '../components/ImageModal.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import ImageItem from '../components/ImageItem.vue'
-import { images, Image } from '../data/imageData'
-const getImageClass = (image: Image) => {
+import ImageModal from '../components/ImageModal.vue'
+import { imagesEs, imagesEn } from '../data/imageData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
+  },
+})
+
+const images = ref(imagesEs)
+const selectedImage = ref<null | {
+  id: string
+  src: string
+  title: string
+  description: string
+  categories: string[]
+  type: string
+}>(null)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    images.value = newLang === 'es' ? imagesEs : imagesEn
+  },
+  { immediate: true },
+)
+
+const getImageClass = (image: { type: string }) => {
   return `image-item ${image.type}`
 }
-const selectedImage = ref<Image | null>(null)
-const openModal = (image: Image) => {
+
+const openModal = (image: {
+  id: string
+  src: string
+  title: string
+  description: string
+  categories: string[]
+  type: string
+}) => {
   selectedImage.value = image
 }
+
 const closeModal = () => {
   selectedImage.value = null
 }
-const updateImage = (image: Image) => {
-  selectedImage.value = image
+
+const updateImage = (updatedImage: {
+  id: string
+  src: string
+  title: string
+  description: string
+  categories: string[]
+  type: string
+}) => {
+  const index = images.value.findIndex((image) => image.id === updatedImage.id)
+  if (index !== -1) {
+    images.value[index] = updatedImage
+  }
 }
 </script>
+
 <style scoped>
 .image-gallery {
   padding: 1% 3% 1% 1%;

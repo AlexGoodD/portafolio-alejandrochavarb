@@ -1,12 +1,10 @@
 <template>
   <div class="info-item">
-    <h1 class="title">Desarrollador Front End, Diseñador Web Freelancer</h1>
+    <h1 class="title">{{ info.title }}</h1>
     <ul class="search-results">
-      <li class="result-item">21 años</li>
-      <li class="result-item">Estudiante de Ingeniería en Tecnología de Software</li>
-      <li class="result-item">Reside en Nuevo León, México</li>
-      <li class="result-item">Proactivo</li>
-      <li class="result-item">Autodidacta</li>
+      <li class="result-item" v-for="(detail, index) in info.details" :key="index">
+        {{ detail }}
+      </li>
     </ul>
     <div class="site-info">
       <div class="site-preview">
@@ -14,17 +12,37 @@
         <img src="path/to/logo.png" alt="Logo" class="site-logo" />
         -->
         <div class="site-preview-info">
-          <p class="site-shortname">Desarrolladores web</p>
-          <p class="site-url">https://www.desarrolladoresweb.com > blog > Alejandro-Chavarria...</p>
+          <p class="site-shortname">{{ info.siteInfo.shortname }}</p>
+          <p class="site-url">{{ info.siteInfo.url }}</p>
         </div>
       </div>
-      <p class="site-name">¿Quién es Alejandro Chavarría? - Desarrolladores web</p>
+      <p class="site-name">{{ info.siteInfo.name }}</p>
     </div>
     <hr />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { infoEs, infoEn } from '../data/infoData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
+  },
+})
+
+const info = ref(infoEs)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    info.value = newLang === 'es' ? infoEs : infoEn
+  },
+  { immediate: true },
+)
+</script>
 
 <style scoped>
 .info-item {

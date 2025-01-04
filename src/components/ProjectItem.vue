@@ -3,13 +3,21 @@
     <div class="project-details">
       <h3>
         <span
-          v-if="props.project.isOnline && props.project.tags.includes('Desarrollo web')"
+          v-if="
+            props.project.isOnline &&
+            (props.project.tags.includes('Desarrollo web') ||
+              props.project.tags.includes('Web Development'))
+          "
           class="icon"
         >
           <i class="fas fa-globe"></i>
         </span>
         <span
-          v-if="props.project.isOnline && props.project.tags.includes('Desarrollo móvil')"
+          v-if="
+            props.project.isOnline &&
+            (props.project.tags.includes('Desarrollo móvil') ||
+              props.project.tags.includes('Mobile Development'))
+          "
           class="icon"
         >
           <i class="fas fa-store"></i>
@@ -44,6 +52,7 @@ const goToRepo = () => {
   window.open(props.project.repoURL, '_blank')
 }
 </script>
+
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .project-item {

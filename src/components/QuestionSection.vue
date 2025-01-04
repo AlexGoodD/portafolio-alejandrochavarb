@@ -12,47 +12,30 @@
     />
   </div>
 </template>
+
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import QuestionItem from '../components/QuestionItem.vue'
-const questions = ref([
-  {
-    title: '¿Dónde puedo ver el CV de Alejandro Chavarría?',
-    answer:
-      'Aquí está el enlace al CV: <a href="https://drive.google.com/file/d/1xw2PsbmsAQ_oiippHu81JCbQ9S7VvwNl/view?usp=share_link" target="_blank">CV de Alejandro Chavarria</a>',
+import { questionsEs, questionsEn } from '../data/questionData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
   },
-  {
-    title: '¿Qué herramientas se utilizaron para la creación de este portafolio?',
-    answer:
-      'Se usaron Vue.js con TypeScript para el desarrollo del frontend, Vite como el bundler, y la API de imgbb para el manejo de imágenes. Además, se utilizó Firebase para el hosting.',
+})
+
+const questions = ref(questionsEs)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    questions.value = newLang === 'es' ? questionsEs : questionsEn
   },
-  {
-    title: '¿Por donde puedo contactar a Alejandro Chavarría?',
-    answer:
-      'A través de LinkedIn: <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">Alejandro Chavarria</a>',
-  },
-  {
-    title: '¿Qué tipo de proyectos desarrolla Alejandro Chavarría?',
-    answer:
-      'Alejandro se especializa en proyectos web responsivos, aplicaciones de una sola página (SPA) y plataformas dinámicas',
-  },
-  {
-    title: '¿Dónde puedo encontrar el repositorio del código de este portafolio?',
-    answer:
-      'El código fuente del portafolio está disponible en GitHub: <a href="https://github.com/AlexGoodD/portafolio-alejandrochavarb" target="_blank">Repositorio de este portafolio</a>',
-  },
-  {
-    title: '¿Cuáles son los proyectos más destacados de Alejandro Chavarría?',
-    answer:
-      'MoonHike, UanLog, CowTrack. Puedes consultar mas proyectos destacados en la sección de proyectos de este portafolio',
-  },
-  {
-    title: '¿Alejandro Chavarría ofrece servicios freelance?',
-    answer:
-      'Sí, Alejandro está disponible para proyectos freelance. Puedes contactarlo directamente a través de <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">LinkedIn</a> o <a href="mailto:alejandrochavarb@gmail.com">correo electrónico</a>',
-  },
-])
+  { immediate: true },
+)
 </script>
+
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .question-section {
