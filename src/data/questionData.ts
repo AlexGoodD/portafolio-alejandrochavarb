@@ -23,23 +23,23 @@ export const questionsEs = [
 
 export const questionsEn = [
   {
-    title: "Where can I see Alejandro Chavarría's CV?",
+    title: "Where can I find Alejandro Chavarría's CV?",
     answer:
-      'Here is the link to the CV: <a href="https://drive.google.com/file/d/1xw2PsbmsAQ_oiippHu81JCbQ9S7VvwNl/view?usp=share_link" target="_blank">Alejandro Chavarria\'s CV</a>',
+      'You can access the CV through this link: <a href="https://drive.google.com/file/d/1xw2PsbmsAQ_oiippHu81JCbQ9S7VvwNl/view?usp=share_link" target="_blank">Alejandro Chavarria\'s CV</a>',
   },
   {
-    title: 'What tools were used to create this portfolio?',
+    title: 'What tools and technologies were used to build this portfolio?',
     answer:
-      'Vue.js with TypeScript was used for frontend development, Vite as the bundler, and the imgbb API for image handling. Additionally, Firebase was used for hosting.',
+      'This portfolio was developed using Vue.js with TypeScript for the frontend, Vite as the bundler, and the imgbb API for image management. Firebase was used for hosting.',
   },
   {
-    title: 'How can I contact Alejandro Chavarría?',
+    title: 'What is the best way to contact Alejandro Chavarría?',
     answer:
-      'Through LinkedIn: <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">Alejandro Chavarria</a>',
+      'You can reach out via LinkedIn: <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">Alejandro Chavarria</a>',
   },
   {
-    title: 'What kind of projects does Alejandro Chavarría develop?',
+    title: 'What types of projects does Alejandro Chavarría work on?',
     answer:
-      'Alejandro specializes in responsive web projects, single-page applications (SPA), and dynamic platforms',
+      'Alejandro focuses on responsive web development, single-page applications (SPA), and creating dynamic platforms.',
   },
 ]
