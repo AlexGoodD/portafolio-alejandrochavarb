@@ -1,12 +1,13 @@
 <template>
   <div>
-    <p class="info-search">Cerca de 17,000 resultados (0.33 segundos)</p>
+    <p class="info-search">{{ searchText }}</p>
     <InfoItem :language="props.language" />
     <QuestionSection :language="props.language" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import InfoItem from '../components/InfoItem.vue'
 import QuestionSection from '../components/QuestionSection.vue'
 
@@ -15,6 +16,12 @@ const props = defineProps({
     type: String,
     required: true,
   },
+})
+
+const searchText = computed(() => {
+  return props.language === 'es'
+    ? 'Cerca de 17,000 resultados (0.33 segundos)'
+    : 'About 17,000 results (0.33 seconds)'
 })
 </script>
 
