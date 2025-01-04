@@ -1,7 +1,7 @@
 <template>
   <div class="question-section">
     <div class="question-title">
-      <h1>Más preguntas</h1>
+      <h1>{{ questionsTitle }}</h1>
       <i class="fa-solid fa-ellipsis-vertical"></i>
     </div>
     <QuestionItem
@@ -12,12 +12,10 @@
     />
   </div>
 </template>
-
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import QuestionItem from '../components/QuestionItem.vue'
 import { questionsEs, questionsEn } from '../data/questionData'
-
 const props = defineProps({
   language: {
     type: String,
@@ -25,8 +23,11 @@ const props = defineProps({
   },
 })
 
-const questions = ref(questionsEs)
+const questionsTitle = computed(() => {
+  return props.language === 'es' ? 'Mas preguntas' : 'More questions'
+})
 
+const questions = ref(questionsEs)
 watch(
   () => props.language,
   (newLang) => {
@@ -35,7 +36,6 @@ watch(
   { immediate: true },
 )
 </script>
-
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .question-section {
@@ -45,52 +45,18 @@ watch(
   margin-left: 230px;
   transition: all 0.5s ease;
 }
-
 @media (max-width: 830px) {
   .question-section {
     width: 70%;
     margin-left: 145px;
   }
 }
-
 @media (max-width: 650px) {
   .question-section {
     width: 70%;
     margin-left: 70px;
   }
 }
-
-/*
-
-@media (min-width: 1680px) {
-  .question-section {
-    width: 850px;
-    padding: 1rem 13.5%;
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1679px) {
-  .question-section {
-    width: 45%;
-    padding: 1rem 15%;
-  }
-}
-
-@media (min-width: 826px) and (max-width: 900px) {
-  .question-section {
-    width: 70%;
-    padding: 1rem 19%;
-  }
-}
-
-@media (max-width: 825px) {
-  .question-section {
-    width: 73%;
-    padding: 1rem 14%;
-  }
-}
-  */
-
 .question-title {
   display: flex;
   align-items: center;
@@ -98,11 +64,15 @@ watch(
   font-size: 0.7rem;
   margin: 0;
   padding: 0 0.5rem;
-  border-bottom: 1px solid #5a5a5a;
+  border-bottom: 1px solid var(--question-title-border-bottom);
 }
 .question-title i {
   cursor: pointer;
   font-size: 0.8rem;
   margin-left: 1.5rem;
+  color: var(--question-title-h1-color);
+}
+.question-title h1 {
+  color: var(--question-title-h1-color);
 }
 </style>

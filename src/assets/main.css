@@ -1,11 +1,76 @@
+:root {
+  --background-color: #232323;
+  --text-color: white;
+  --navbar-background-color: #232323;
+  --navbar-text-color: white;
+  --navbar-menu-li-a-active-link-color: #81acec;
+  --navbar-menu-active-link-color: #81acec;
+  --navbar-menu-active-link-border-bottom: #81acec;
+  --info-item-title-color: #d9d9d9;
+  --info-item-search-results-color: #d9d9d9;
+  --info-item-site-shortname-color: #fff;
+  --info-item-site-url-color: #d2d2d2;
+  --info-item-site-name-color: #81acec;
+  --question-title-color: #d2d2d2;
+  --question-title-border-bottom: #5a5a5a;
+  --question-title-h1-color: #d2d2d2;
+  --question-answer-color: #e5e5e5;
+  --question-fas-background-color: #2d2c32;
+  --question-fas-color: #d2d2d2;
+  --question-fas-hover-background-color: #39383f;
+  --question-fas-hover-color: #ebebeb;
+  --question-answer-a-color: #81acec;
+  --question-answer-a-hover-color: #9fbeee;
+  --searchbar-search-input-background-color: #383838;
+  --searchbar-search-input-color: #fff;
+  --searchbar-search-input-hover-background-color: #505050;
+  --searchbar-result-item-color: #dddddd;
+  --footer-background-color: #181818;
+  --footer-color: #fff;
+  --footer-link-color: #81acec;
+}
+
+[data-theme='light'] {
+  --background-color: white;
+  --text-color: black;
+  --navbar-background-color: white;
+  --navbar-text-color: black;
+  --navbar-menu-li-a-active-link-color: black;
+  --navbar-menu-active-link-color: black;
+  --navbar-menu-active-link-border-bottom: black;
+  --info-item-title-color: black;
+  --info-item-search-results-color: black;
+  --info-item-site-shortname-color: black;
+  --info-item-site-url-color: #717171;
+  --info-item-site-name-color: #3378e1;
+  --question-title-color: black;
+  --question-title-border-bottom: #5a5a5a;
+  --question-answer-color: rgb(70, 70, 70);
+  --question-fas-background-color: #eceef0;
+  --question-fas-color: #838383;
+  --question-fas-hover-background-color: #ebebeb;
+  --question-fas-hover-color: #545454;
+  --question-answer-a-color: #3378e1;
+  --question-answer-a-hover-color: #93b2df;
+  --question-title-h1-color: black;
+  --searchbar-search-input-background-color: #fff;
+  --searchbar-search-input-hover-background-color: #f3f3f3;
+  --searchbar-result-item-color: rgb(70, 70, 70);
+  --searchbar-search-input-color: #1a1a1a;
+  --footer-background-color: #ededed;
+  --footer-color: black;
+  --footer-link-color: #3378e1;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #232323;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
   overflow-x: hidden;
 }
+
 #app {
   height: 100%;
   width: 100vw;
@@ -15,12 +80,12 @@ body {
 }
 
 .question-answer a {
-  color: #81acec;
+  color: var(--question-answer-a-color);
   transition: color 0.5s ease;
   text-decoration: none;
 }
 
 .question-answer a:hover {
-  color: #9fbeee;
+  color: var(--question-answer-a-hover-color);
   text-decoration: underline;
 }

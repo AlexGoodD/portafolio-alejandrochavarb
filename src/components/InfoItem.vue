@@ -40,7 +40,6 @@ watch(
 .info-item {
   margin-top: -1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-left: 240px;
   margin-right: auto;
   width: 40%;
@@ -71,12 +70,12 @@ watch(
 .title {
   font-size: 1.3rem;
   margin-bottom: 10px;
-  color: #d9d9d9;
+  color: var(--info-item-title-color);
 }
 .search-results {
   list-style-type: disc;
   padding: 0 1.2rem;
-  color: #d9d9d9;
+  color: var(--info-item-search-results-color);
 }
 .result-item {
   font-size: 1.25rem;
@@ -84,17 +83,17 @@ watch(
 }
 .site-shortname {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--info-item-site-shortname-color);
 }
 .site-url {
   margin-top: -1rem;
-  color: #d2d2d2;
+  color: var(--info-item-site-url-color);
 }
 .site-name {
   margin-top: -0.5rem;
   padding: 0;
   font-size: 1.4rem;
-  color: #81acec;
+  color: var(--info-item-site-name-color);
 }
 .site-name:hover {
   text-decoration: underline;
