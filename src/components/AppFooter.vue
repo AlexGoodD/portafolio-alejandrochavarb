@@ -3,9 +3,9 @@
     <nav class="footer">
       <div class="footer-content">
         <div class="footer-searchs">
-          <p id="text">Los resultados están personalizados</p>
+          <p id="text">{{ text1 }}</p>
           <p>-</p>
-          <p id="resalt">Probar sin personalización</p>
+          <p id="resalt">{{ text2 }}</p>
         </div>
         <div class="footer-ubication">
           <p id="semibold">México</p>
@@ -13,17 +13,52 @@
         </div>
         <div class="footer-extra" id="semibold">
           <ul>
-            <li>Ayuda</li>
-            <li>Enviar comentarios</li>
-            <li>Privacidad</li>
-            <li>Condiciones</li>
+            <li>{{ text3 }}</li>
+            <li>{{ text4 }}</li>
+            <li>{{ text5 }}</li>
+            <li>{{ text6 }}</li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
+  },
+})
+
+const text1 = computed(() => {
+  return props.language === 'es'
+    ? 'Los resultados están personalizados'
+    : 'Results are personalized'
+})
+
+const text2 = computed(() => {
+  return props.language === 'es' ? 'Probar sin personalización' : 'Try without customization'
+})
+
+const text3 = computed(() => {
+  return props.language === 'es' ? 'Ayuda' : 'Help'
+})
+
+const text4 = computed(() => {
+  return props.language === 'es' ? 'Enviar comentarios' : 'Send feedback'
+})
+
+const text5 = computed(() => {
+  return props.language === 'es' ? 'Privacidad' : 'Privacy'
+})
+
+const text6 = computed(() => {
+  return props.language === 'es' ? 'Condiciones' : 'Conditions'
+})
+</script>
 <style scoped>
 .footer {
   background-color: #181818;
