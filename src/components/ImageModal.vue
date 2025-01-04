@@ -38,8 +38,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
+import { onMounted, onBeforeUnmount, ref, computed, watch } from 'vue'
 import ProjectGrid from './ProjectGrid.vue'
+import { imagesEs, imagesEn } from '../data/imageData'
+
 const props = defineProps({
   image: {
     type: Object,
@@ -72,6 +74,22 @@ const buttonSave = computed(() => {
 const routerLinkText = computed(() => {
   return props.language === 'es' ? 'sección correspondiente' : 'corresponding section'
 })
+
+const translatedCategories = ref(props.image.categories)
+
+watch(
+  () => props.language,
+  (newLang) => {
+    const image =
+      newLang === 'es'
+        ? imagesEs.find((img) => img.id === props.image.id)
+        : imagesEn.find((img) => img.id === props.image.id)
+    if (image) {
+      translatedCategories.value = image.categories
+    }
+  },
+  { immediate: true },
+)
 
 const emit = defineEmits(['close', 'update:image'])
 const close = () => {
@@ -106,6 +124,7 @@ const handleScroll = () => {
   }
   modalFixed.value = window.scrollY > 84
 }
+
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown)
   window.addEventListener('scroll', handleScroll)
@@ -125,8 +144,8 @@ onBeforeUnmount(() => {
   transform: translate(-50%, -50%);
   width: 45%;
   height: 70%;
-  background: #232323;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  background: var(--image-modal-background-color);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   z-index: 1001;
   border-radius: 1rem;
   display: flex;
@@ -149,8 +168,8 @@ onBeforeUnmount(() => {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   font-size: 0.8rem;
-  background-color: #2e2e2e;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--image-modal-category-background-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: #818181;
 }
 .modal-content {
@@ -170,14 +189,14 @@ onBeforeUnmount(() => {
   flex-grow: 1;
 }
 .title {
-  color: white;
+  color: var(--image-modal-title-color);
   font-size: 1rem;
 }
 #tag {
   color: #909090;
 }
 .description {
-  color: rgb(218, 218, 218);
+  color: var(--image-modal-description-color);
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -217,11 +236,11 @@ onBeforeUnmount(() => {
   color: #9d9d9d;
   transition: background-color 0.5s ease;
   position: absolute;
-  background-color: #232323;
+  background-color: var(--image-modal-close-background-color);
   border-radius: 1rem;
 }
 .close:hover {
-  background-color: #2e2e2e;
+  background-color: var(--image-modal-close-hover-background-color);
 }
 .prev,
 .next {
@@ -249,12 +268,12 @@ onBeforeUnmount(() => {
 }
 .share,
 .save {
-  background-color: rgb(53, 62, 83);
+  background-color: var(--image-modal-button-share-save-background-color);
   outline: none;
   border: none;
   padding: 0.7rem 5rem;
   border-radius: 1rem;
-  color: rgb(218, 218, 218);
+  color: var(--image-modal-button-share-save-color);
   font-size: 0.8rem;
   width: 100%;
   cursor: pointer;
@@ -262,7 +281,7 @@ onBeforeUnmount(() => {
 }
 .share:hover,
 .save:hover {
-  background-color: rgb(63, 72, 93);
+  background-color: var();
 }
 .image-container {
   width: 100%;

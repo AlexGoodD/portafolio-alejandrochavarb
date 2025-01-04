@@ -44,7 +44,7 @@ const props = defineProps({
 }
 .image-item.selected {
   border-color: rgb(176, 199, 255);
-  background-color: rgba(51, 78, 107, 0.511);
+  background-color: var(--image-item-selected-background-color);
 }
 .image-container {
   width: 100%;
@@ -54,7 +54,7 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  background-color: #2a2a2e;
+  background-color: var(--image-item-image-container-background-color);
 }
 .image-item img {
   width: 100%;
@@ -72,6 +72,6 @@ const props = defineProps({
 }
 .description {
   font-size: 0.9rem;
-  color: #c0c0c0;
+  color: var(--image-item-description-color);
 }
 </style>

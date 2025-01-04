@@ -28,6 +28,24 @@
   --footer-background-color: #181818;
   --footer-color: #fff;
   --footer-link-color: #81acec;
+  --tech-carrousel-background-color: #232323;
+  --tech-carrousel-border-bottom: #5a5a5a;
+  --tech-carrousel-container-background-left: rgba(35, 35, 35, 1);
+  --tech-carrousel-container-background-right: rgba(35, 35, 35, 0);
+  --tech-carrousel-scroll-button-color: #fff;
+  --tech-carrousel-scroll-button-hover-background-color: #3e3f42ae;
+  --image-item-image-container-background-color: #2a2a2e;
+  --image-item-description-color: #c0c0c0;
+  --image-item-selected-background-color: rgba(51, 78, 107, 0.511);
+  --image-modal-background-color: #232323;
+  --image-modal-close-background-color: #232323;
+  --image-modal-close-hover-background-color: #2e2e2e;
+  --image-modal-title-color: white;
+  --image-modal-description-color: rgb(218, 218, 218);
+  --image-modal-button-share-save-color: rgb(218, 218, 218);
+  --image-modal-button-share-save-background-color: rgb(53, 62, 83);
+  --image-modal-button-share-save-hover-background-color: rgb(63, 72, 93);
+  --image-modal-category-background-color: #2e2e2e;
 }
 
 [data-theme='light'] {
@@ -60,6 +78,24 @@
   --footer-background-color: #ededed;
   --footer-color: black;
   --footer-link-color: #3378e1;
+  --tech-carrousel-background-color: #fff;
+  --tech-carrousel-border-bottom: #c5c5c5;
+  --tech-carrousel-container-background-left: rgb(255, 255, 255);
+  --tech-carrousel-container-background-right: rgba(255, 255, 255, 0);
+  --tech-carrousel-scroll-button-color: #8d8d8dae;
+  --tech-carrousel-scroll-button-hover-background-color: #e9eaeeae;
+  --image-item-image-container-background-color: #f4f4f4;
+  --image-item-description-color: black;
+  --image-item-selected-background-color: rgba(135, 193, 255, 0.242);
+  --image-modal-background-color: #fff;
+  --image-modal-close-background-color: #fff;
+  --image-modal-close-hover-background-color: #e4e4e4;
+  --image-modal-title-color: black;
+  --image-modal-description-color: black;
+  --image-modal-button-share-save-color: rgb(0, 0, 0);
+  --image-modal-button-share-save-background-color: rgb(194, 213, 255);
+  --image-modal-button-share-save-hover-background-color: rgb(220, 231, 255);
+  --image-modal-category-background-color: #e6e6e6;
 }
 
 body {

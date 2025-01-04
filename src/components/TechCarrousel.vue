@@ -108,8 +108,8 @@ onMounted(() => {
   height: 60px;
   margin-right: 10px;
   border-radius: 1rem;
-  border: 2px solid #5a5a5a;
-  background-color: #232323;
+  border: 2px solid var(--tech-carrousel-border-bottom);
+  background-color: var(--tech-carrousel-background-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -144,7 +144,7 @@ onMounted(() => {
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  color: white;
+  color: var(--tech-carrousel-scroll-button-color);
   padding: 1rem;
   cursor: pointer;
   border-radius: 2rem;
@@ -152,7 +152,7 @@ onMounted(() => {
   transition: background-color 0.5s ease;
 }
 .scroll-button:hover {
-  background-color: #3e3f42ae;
+  background-color: var(--tech-carrousel-scroll-button-hover-background-color);
 }
 .scroll-button.left {
   left: 0;
@@ -180,10 +180,18 @@ onMounted(() => {
 }
 .carousel-container::before {
   left: 0;
-  background: linear-gradient(to right, rgba(35, 35, 35, 1), rgba(35, 35, 35, 0));
+  background: linear-gradient(
+    to right,
+    var(--tech-carrousel-container-background-left),
+    var(--tech-carrousel-container-background-right)
+  );
 }
 .carousel-container::after {
   right: 0;
-  background: linear-gradient(to left, rgba(35, 35, 35, 1), rgba(35, 35, 35, 0));
+  background: linear-gradient(
+    to left,
+    var(--tech-carrousel-container-background-left),
+    var(--tech-carrousel-container-background-right)
+  );
 }
 </style>
