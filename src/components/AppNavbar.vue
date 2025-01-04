@@ -4,6 +4,7 @@
       <div class="navbar-content">
         <div class="top-bar">
           <img src="../assets/Googol.svg" alt="Logo" class="site-logo" />
+          <img src="../assets/Googol-reducido.png" alt="Logo" class="site-logo" id="reducido" />
           <SearchBar />
           <div class="navbar-buttons">
             <li>
@@ -129,6 +130,7 @@ onBeforeUnmount(() => {
   color: white;
   background-color: #232323;
   transition: padding 0.5s ease;
+  align-items: center;
 }
 .site-logo {
   width: 150px;
@@ -136,10 +138,25 @@ onBeforeUnmount(() => {
   margin-top: 0.5rem;
   transition: all 0.5s ease;
 }
+#reducido {
+  width: 25px;
+  height: auto;
+  display: none;
+  margin-left: -5px;
+}
 @media (max-width: 830px) {
   .site-logo {
     width: 80px;
     height: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .site-logo {
+    display: none;
+  }
+
+  #reducido {
+    display: block;
   }
 }
 .navbar-content {
@@ -163,6 +180,35 @@ onBeforeUnmount(() => {
   transition: padding 0.5s ease;
 }
 
+@media (max-width: 830px) {
+  .navbar-menu {
+    padding: 0 0 0 75px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar-menu {
+    width: 75%;
+    padding: 0 0 0 0;
+  }
+
+  .navbar {
+    padding: 2rem 0 1rem 5%;
+  }
+
+  .navbar-selector {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .navbar-selector::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
 li {
   list-style: none;
 }
@@ -175,6 +221,11 @@ li {
   gap: 15px;
 }
 
+@media (max-width: 355px) {
+  .navbar-buttons {
+    display: none;
+  }
+}
 .theme-button,
 .language-button {
   background: none;
