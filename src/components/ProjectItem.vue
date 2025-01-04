@@ -140,6 +140,14 @@ const goToRepo = () => {
   background-color: #2e2e2e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+.technology {
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  background-color: #2e2e2e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 img {
   transition: transform 0.5s ease;
 }
