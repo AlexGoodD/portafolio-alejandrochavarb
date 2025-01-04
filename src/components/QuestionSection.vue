@@ -52,6 +52,14 @@ watch(
     margin-left: 145px;
   }
 }
+
+@media (max-width: 650px) {
+  .question-section {
+    width: 70%;
+    margin-left: 70px;
+  }
+}
+
 /*
 
 @media (min-width: 1680px) {
