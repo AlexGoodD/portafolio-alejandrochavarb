@@ -117,19 +117,20 @@ onBeforeUnmount(() => {
   position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: 94%;
   z-index: 1000;
-  padding: 2rem 0 1rem 3rem;
+  padding: 2rem 3rem 1rem 3rem;
   border-bottom: 1px solid #5a5a5a;
   color: white;
   background-color: #232323;
   transition: padding 0.5s ease;
 }
 .site-logo {
-  width: 9%;
-  height: 9%;
-  margin-right: 3%;
+  width: 150px;
+  height: 50px;
   margin-top: 0.5rem;
+  transition: all 0.5s ease;
 }
 .navbar-content {
   display: flex;
@@ -146,7 +147,7 @@ onBeforeUnmount(() => {
 }
 .navbar-menu {
   margin: 0;
-  padding: 0 0 0 11%;
+  padding: 0 0 0 160px;
   display: flex;
   list-style-type: none;
   transition: padding 0.5s ease;
@@ -157,20 +158,28 @@ li {
 }
 
 .navbar-buttons {
-  margin-left: 20%;
-  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 30px;
+  z-index: 1000;
   display: flex;
+  gap: 15px;
 }
+
 .theme-button,
 .language-button {
   background: none;
   border: none;
   color: #9d9d9d;
   cursor: pointer;
-  font-size: 14px;
-  margin-left: 1rem;
+  font-size: 17px;
 }
 @media (max-width: 830px) {
+  .site-logo {
+    width: 100px;
+    height: 50px;
+    margin-top: 0.5rem;
+  }
+
   .navbar-menu {
     padding: 0 0 0 10%;
   }
