@@ -1,11 +1,31 @@
 <template>
   <div>
-    <p class="info-search">Cerca de 3 resultados (0.14 segundos)</p>
-    <ContactSection />
+    <p class="info-search">{{ searchText }}</p>
+    <ContactSection :language="props.language" />
   </div>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue'
 import ContactSection from '../components/ContactSection.vue'
+import { contactsEs } from '../data/contactData'
+
+const props = defineProps({
+  language: {
+    type: String,
+    required: true,
+  },
+})
+
+const contactsCount = computed(() => {
+  return contactsEs.length
+})
+
+const searchText = computed(() => {
+  const count = contactsCount.value
+  return props.language === 'es'
+    ? `Cerca de ${count} resultados (0.14 segundos)`
+    : `About ${count} results (0.14 seconds)`
+})
 </script>
 <style scoped>
 .info-search {
