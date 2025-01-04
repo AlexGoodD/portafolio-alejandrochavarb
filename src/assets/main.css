@@ -6,6 +6,7 @@
   --navbar-menu-li-a-active-link-color: #81acec;
   --navbar-menu-active-link-color: #81acec;
   --navbar-menu-active-link-border-bottom: #81acec;
+  --navbar-more-menu-background-color: #232323;
   --info-item-title-color: #d9d9d9;
   --info-item-search-results-color: #d9d9d9;
   --info-item-site-shortname-color: #fff;
@@ -46,6 +47,12 @@
   --image-modal-button-share-save-background-color: rgb(53, 62, 83);
   --image-modal-button-share-save-hover-background-color: rgb(63, 72, 93);
   --image-modal-category-background-color: #2e2e2e;
+  --project-item-project-details-h3-color: #81acec;
+  --project-item-project-description-color: #c5c3c3;
+  --project-item-project-category-background-color: #2e2e2e;
+  --conact-item-contact-details-h3-color: #81acec;
+  --contact-item-contact-description-color: #c5c3c3;
+  --contact-item-contact-site-color: #c5c3c3;
 }
 
 [data-theme='light'] {
@@ -56,6 +63,7 @@
   --navbar-menu-li-a-active-link-color: black;
   --navbar-menu-active-link-color: black;
   --navbar-menu-active-link-border-bottom: black;
+  --navbar-more-menu-background-color: white;
   --info-item-title-color: black;
   --info-item-search-results-color: black;
   --info-item-site-shortname-color: black;
@@ -96,6 +104,12 @@
   --image-modal-button-share-save-background-color: rgb(194, 213, 255);
   --image-modal-button-share-save-hover-background-color: rgb(220, 231, 255);
   --image-modal-category-background-color: #e6e6e6;
+  --project-item-project-details-h3-color: #3378e1;
+  --project-item-project-description-color: #373737;
+  --project-item-project-category-background-color: #e6e6e6;
+  --conact-item-contact-details-h3-color: #3378e1;
+  --contact-item-contact-description-color: #373737;
+  --contact-item-contact-site-color: #909090;
 }
 
 body {

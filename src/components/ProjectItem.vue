@@ -128,14 +128,7 @@ const goToRepo = () => {
 .technology {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
-  background-color: #2e2e2e;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-.technology {
-  padding: 0.3rem 1rem;
-  border-radius: 1rem;
-  background-color: #2e2e2e;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: var(--project-item-project-category-background-color);
 }
 img {
   transition: transform 0.5s ease;
@@ -155,10 +148,10 @@ img:hover {
 }
 .project-details h3 {
   font-size: 1rem;
-  color: #81acec;
+  color: var(--project-item-project-details-h3-color);
 }
 .description {
-  color: #c5c3c3;
+  color: var(--project-item-project-description-color);
 }
 .year {
   color: #909090;

@@ -283,7 +283,7 @@ li {
   position: absolute;
   top: 150%;
   left: 0;
-  background-color: #232323;
+  background-color: var(--navbar-more-menu-background-color);
   list-style-type: none;
   margin: 0;
   padding: 0;

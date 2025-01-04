@@ -65,7 +65,7 @@ const goToContact = () => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .site {
-  color: #c5c3c3;
+  color: var(--contact-item-contact-site-color);
 }
 .dot::before {
   content: '•';
@@ -90,10 +90,10 @@ img:hover {
 }
 .contact-details h3 {
   font-size: 1rem;
-  color: #81acec;
+  color: var(--conact-item-contact-details-h3-color);
 }
 .description {
-  color: #c5c3c3;
+  color: var(--contact-item-contact-description-color);
 }
 
 @media (max-width: 455px) {
