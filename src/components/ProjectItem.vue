@@ -52,7 +52,6 @@ const goToRepo = () => {
   window.open(props.project.repoURL, '_blank')
 }
 </script>
-
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .project-item {
@@ -85,45 +84,39 @@ const goToRepo = () => {
   color: #909090;
   font-size: 0.8rem;
   overflow-x: auto;
-  min-width: 100%; /* Asegura que tenga al menos el ancho del contenedor padre */
+  min-width: 100%;
   white-space: nowrap;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .technologies::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
 }
 .info-technologies {
   color: #909090;
-  width: 100%; /* o auto, según sea necesario */
+  width: 100%;
   align-items: center;
   display: inline-flex;
 }
-
 .info-technologies li {
   margin-top: 10px;
   margin-right: 10px;
 }
-
 @media (max-width: 800px) {
   .description {
     display: list-item;
   }
-
   .info-technologies {
     display: none;
   }
 }
-
 @media (max-width: 1165px) {
   .description {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
   }
 }
-
 @media (max-width: 690px) {
   .project-item {
     flex-direction: column;
@@ -133,21 +126,18 @@ const goToRepo = () => {
     display: flex;
   }
 }
-
 .technology {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   background-color: #2e2e2e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
 .technology {
   padding: 0.3rem 1rem;
   border-radius: 1rem;
   background-color: #2e2e2e;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
 img {
   transition: transform 0.5s ease;
 }
