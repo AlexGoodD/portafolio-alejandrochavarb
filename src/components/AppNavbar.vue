@@ -48,9 +48,7 @@
               </button>
               <ul v-if="showMoreMenu" class="dropdown-menu">
                 <li class="item1">
-                  <a href="src/assets/Alejandro_Chavarria_CV.pdf" download>{{
-                    translations.downloadCV
-                  }}</a>
+                  <a :href="cvLink" download>{{ translations.downloadCV }}</a>
                 </li>
                 <li class="item2">
                   <a href="https://www.linkedin.com/in/alejandro-chavarb" target="_blank">{{
@@ -78,6 +76,12 @@ import { navbarEs, navbarEn } from '../data/navbarData'
 
 const translations = computed(() => {
   return language.value === 'es' ? navbarEs : navbarEn
+})
+
+const cvLink = computed(() => {
+  return language.value === 'es'
+    ? 'src/assets/Alejandro_Chavarria_CV.pdf'
+    : 'src/assets/Alejandro_Chavarria_CV-En.pdf'
 })
 
 const toggleMoreMenu = () => {
@@ -132,6 +136,12 @@ onBeforeUnmount(() => {
   margin-top: 0.5rem;
   transition: all 0.5s ease;
 }
+@media (max-width: 830px) {
+  .site-logo {
+    width: 80px;
+    height: 100%;
+  }
+}
 .navbar-content {
   display: flex;
   flex-direction: column;
@@ -172,40 +182,6 @@ li {
   color: #9d9d9d;
   cursor: pointer;
   font-size: 17px;
-}
-@media (max-width: 830px) {
-  .site-logo {
-    width: 100px;
-    height: 50px;
-    margin-top: 0.5rem;
-  }
-
-  .navbar-menu {
-    padding: 0 0 0 10%;
-  }
-}
-
-@media (max-width: 660px) {
-  .navbar-menu {
-    width: 75%;
-    padding: 0 0 0 8%;
-  }
-
-  .navbar {
-    padding: 2rem 0 1rem 5%;
-  }
-
-  .navbar-selector {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .navbar-selector::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
 }
 
 .navbar-selector {

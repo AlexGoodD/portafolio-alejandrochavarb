@@ -39,14 +39,20 @@ watch(
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 .question-section {
-  padding: 1rem 14rem;
+  padding: 1rem 0;
   width: 45%;
   margin-top: 1rem;
-  transition:
-    padding 0.5s ease,
-    width 0.5s ease,
-    margin-top 0.5s ease;
+  margin-left: 230px;
+  transition: all 0.5s ease;
 }
+
+@media (max-width: 830px) {
+  .question-section {
+    width: 70%;
+    margin-left: 145px;
+  }
+}
+/*
 
 @media (min-width: 1680px) {
   .question-section {
@@ -75,6 +81,7 @@ watch(
     padding: 1rem 14%;
   }
 }
+  */
 
 .question-title {
   display: flex;

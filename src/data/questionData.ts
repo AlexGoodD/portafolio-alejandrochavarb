@@ -25,7 +25,7 @@ export const questionsEn = [
   {
     title: "Where can I find Alejandro Chavarría's CV?",
     answer:
-      'You can access the CV through this link: <a href="https://drive.google.com/file/d/1xw2PsbmsAQ_oiippHu81JCbQ9S7VvwNl/view?usp=share_link" target="_blank">Alejandro Chavarria\'s CV</a>',
+      'You can access the CV through this link: <a href="https://drive.google.com/file/d/17eatiIIEIHkeEgM03zw4EUkDKOFrj9CB/view?usp=share_link" target="_blank">Alejandro Chavarria\'s CV</a>',
   },
   {
     title: 'What tools and technologies were used to build this portfolio?',
