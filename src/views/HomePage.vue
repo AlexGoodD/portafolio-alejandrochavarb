@@ -30,10 +30,7 @@ const searchText = computed(() => {
   color: #9d9d9d;
   margin-bottom: 3rem;
   margin-left: 240px;
-  transition:
-    margin-left 0.5s ease,
-    margin-right 0.5s ease,
-    margin-top 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 @media (max-width: 830px) {
