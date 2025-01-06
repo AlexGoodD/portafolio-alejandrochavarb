@@ -1,16 +1,5 @@
 export const projectsEs = [
   {
-    title: 'CowTrack',
-    year: 2024,
-    description:
-      'Aplicación móvil para gestionar ganado mediante códigos QR, permitiendo registrar datos clave y generar identificadores únicos para trazabilidad eficiente.',
-    technologies: ['Swift', 'Firebase', 'Figma', 'Xcode'],
-    tags: ['iOS', 'Desarrollo móvil', 'Ecosistema Apple'],
-    smallImage: 'https://i.ibb.co/ZLpKLd2/CowTrack.png',
-    largeImage: 'path/to/large-image1.jpg',
-    repoURL: 'https://github.com/AlexGoodD/CowTrack',
-  },
-  {
     title: 'MoonHike',
     year: 2024,
     description:
@@ -85,20 +74,21 @@ export const projectsEs = [
     largeImage: 'path/to/large-image5.jpg',
     repoURL: 'https://github.com/AlexGoodD/TaskDone',
   },
+  {
+    title: 'URSH',
+    year: 2025,
+    description:
+      'Plataforma web para acortar URLs y generar códigos QR de manera eficiente y rápida.',
+    technologies: ['Vue.js', 'Firebase', 'Figma', 'Git'],
+    tags: ['Desarrollo web', 'Utilidades', 'Códigos QR', 'Vercel'],
+    smallImage: 'https://i.ibb.co/S0XDMHr/URSH.png',
+    largeImage: 'path/to/large-image1.jpg',
+    repoURL: 'https://github.com/AlexGoodD/url-shorter',
+    isOnline: true,
+  },
 ]
 
 export const projectsEn = [
-  {
-    title: 'CowTrack',
-    year: 2024,
-    description:
-      'Mobile app for managing livestock using QR codes, allowing key data registration and generating unique identifiers for efficient traceability.',
-    technologies: ['Swift', 'Firebase', 'Figma', 'Xcode'],
-    tags: ['iOS', 'Mobile Development', 'Apple Ecosystem'],
-    smallImage: 'https://i.ibb.co/ZLpKLd2/CowTrack.png',
-    largeImage: 'path/to/large-image1.jpg',
-    repoURL: 'https://github.com/AlexGoodD/CowTrack',
-  },
   {
     title: 'MoonHike',
     year: 2024,
@@ -172,5 +162,16 @@ export const projectsEn = [
     smallImage: 'https://i.ibb.co/VDzGgXc/TaskDone.png',
     largeImage: 'path/to/large-image5.jpg',
     repoURL: 'https://github.com/AlexGoodD/TaskDone',
+  },
+  {
+    title: 'URSH',
+    year: 2025,
+    description: 'Web platform to shorten URLs and generate QR codes efficiently and quickly.',
+    technologies: ['Vue.js', 'Firebase', 'Figma', 'Git'],
+    tags: ['Web Development', 'Utilities', 'QR Codes', 'Vercel'],
+    smallImage: 'https://i.ibb.co/S0XDMHr/URSH.png',
+    largeImage: 'path/to/large-image1.jpg',
+    repoURL: 'https://github.com/AlexGoodD/url-shorter',
+    isOnline: true,
   },
 ]
