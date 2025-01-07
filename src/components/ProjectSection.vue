@@ -1,11 +1,11 @@
 <template>
   <div class="project-section">
-    <ProjectItem v-for="project in projects" :key="project.title" :project="project" />
+    <ProjectItem v-for="project in sortedProjects" :key="project.title" :project="project" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import ProjectItem from './ProjectItem.vue'
 import { projectsEs, projectsEn } from '../data/projectsData'
 
@@ -25,6 +25,10 @@ watch(
   },
   { immediate: true },
 )
+
+const sortedProjects = computed(() => {
+  return [...projects.value].sort((a, b) => b.year - a.year)
+})
 </script>
 
 <style scoped>
