@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw:fixed tw:top-0 tw:left-0 tw:right-0 tw:w-screen tw:bg-[var(--navbar-background-color)] tw:text-white tw:border-b tw:border-[#5a5a5a] tw:z-[1000] tw:py-4 tw:px-6 tw:px-10">
+    class="tw:top-0 tw:bg-[var(--navbar-background-color)] tw:text-white tw:border-b tw:border-[#5a5a5a] tw:z-[1000] tw:py-4 tw:px-10">
     <nav class="tw:flex tw:items-start tw:w-full tw:pt-6">
       <img src="../../assets/Googol.svg" class="tw:w-[150px] tw:h-[50px] tw:mt-[0.5rem]" alt="logo" />
 
