@@ -1,24 +1,28 @@
 <template>
-  <div class="searchbar-container">
-    <div class="search-input-wrapper">
+  <div class="tw:relative tw:w-[40rem] tw:pb-6">
+    <div>
       <input
-          type="text"
-          v-model="query"
-          @input="search"
-          placeholder="Alejandro Chavarría..."
-          :class="results.length ? 'search-input results-open' : 'search-input'"
+        type="text"
+        v-model="query"
+        @input="search"
+        placeholder="Alejandro Chavarría..."
+        :class="results.length ? 'tw:w-full tw:py-[0.8rem] tw:px-[1rem] tw:text-[16px] tw:border-none tw:rounded-t-3xl tw:bg-[var(--searchbar-search-input-background-color)] tw:text-[var(--searchbar-search-input-color)] tw:transition-colors tw:duration-200 search-input-shadow tw:hover:bg-[var(--searchbar-search-input-hover-background-color)]' : 'tw:w-full tw:py-[0.8rem] tw:px-[1rem] tw:text-[16px] tw:border-none tw:rounded-full tw:bg-[var(--searchbar-search-input-background-color)] tw:text-[var(--searchbar-search-input-color)] tw:transition-colors tw:duration-200 search-input-shadow tw:hover:bg-[var(--searchbar-search-input-hover-background-color)]'"
       />
-      <i v-if="query" class="fa-solid fa-x clear-icon" @click="clearSearch"></i>
+      <i v-if="query"
+         class="fa-solid fa-x tw:absolute tw:right-6 tw:top-1/2 tw:-translate-y-[50%] tw:text-sm tw:cursor-pointer tw:text-[var(--searchbar-search-input-color)] tw:opacity-50"
+         @click="clearSearch"></i>
     </div>
-    <ul v-if="results.length" class="results-list">
-      <li v-for="result in results" :key="result" class="result-item">
+    <ul v-if="results.length"
+        class="tw:absolute tw:left-0 tw:w-full tw:list-none tw:m-0 tw:rounded-b-[1rem] tw:bg-[var(--searchbar-search-input-background-color)] tw:z-[999] tw:p-4 result-list-shadow">
+      <li v-for="result in results" :key="result"
+          class="tw:w-full tw:py-2 tw:text-[var(--searchbar-result-item-color)] tw:cursor-pointer tw:transition-colors tw:duration-200 tw:hover:text-[var(--searchbar-result-item-color-hover)]">
         <a :href="getResultLink(result)">{{ result }}</a>
       </li>
     </ul>
   </div>
 </template>
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 const query = ref('')
 const results = ref<string[]>([])
@@ -26,12 +30,12 @@ const allResults = [
   '¿Alejandro Chavarría quién es?',
   '¿Que tecnologías usa Alejandro Chavarría?',
   'Proyectos de Alejandro Chavarría',
-  '¿Cómo contactar a Alejandro Chavarría?',
+  '¿Cómo contactar a Alejandro Chavarría?'
 ]
 const search = () => {
   if (query.value) {
     results.value = allResults.filter((result) =>
-        result.toLowerCase().includes(query.value.toLowerCase()),
+      result.toLowerCase().includes(query.value.toLowerCase())
     )
   } else {
     results.value = []
@@ -59,76 +63,13 @@ const getResultLink = (result: string) => {
 <style scoped>
 @import '@fortawesome/fontawesome-free/css/all.css';
 
-.searchbar-container {
-  position: relative;
-  width: 50%;
-}
-
-.input-wrapper {
-  position: relative;
-  width: 100%;
-}
-
 input {
   outline: none;
   display: flex;
 }
 
-.search-input {
-  width: 100%;
-  padding: 1rem;
-  font-size: 16px;
-  border: none;
-  border-radius: 2rem;
-  //background-color: var(--searchbar-search-input-background-color);
-  //color: var(--searchbar-search-input-color);
+.search-input-shadow, .result-list-shadow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
-  transition: background-color 0.2s;
-}
-
-.search-input:hover {
-  //background-color: var(--searchbar-search-input-hover-background-color);
-}
-
-.clear-icon {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: small;
-  cursor: pointer;
-  //color: var(--searchbar-search-input-color);
-  opacity: 0.5;
-}
-
-.results-open {
-  border-radius: 2rem 2rem 0 0;
-}
-
-.results-list {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  border-radius: 0 0 1rem 1rem;
-  //background: var(--searchbar-search-input-background-color);
-  z-index: 999;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
-  padding: 1rem;
-}
-
-.result-item {
-  padding: 0.5rem 0;
-  width: 100%;
-  //color: var(--searchbar-result-item-color);
-  cursor: pointer;
-  transition: background-color 0.2s,
-  color 0.2s;
-}
-
-.result-item:hover {
-  color: #ffffff;
 }
 
 li a {

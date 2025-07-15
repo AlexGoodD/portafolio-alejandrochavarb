@@ -7,47 +7,53 @@
   --vt-c-text-dark-1: var(--vt-c-white);
 
   --navbar-background-color-dark: #232323;
-  --navbar-background-color-white: #fafafa;
+  --navbar-background-color-light: #fafafa;
 
-  --navbar-text-color-neutral: #9d9d9d;
+  --navbar-text-color-neutral: #686868;
   --navbar-text-color-hover-neutral: #d0d0d0;
-  --navbar-text-color-active-neutral: #000000;
+  --navbar-text-color-active-neutral: #272727;
   --navbar-more-menu-background-dark: #232323;
-  --navbar-more-menu-background-white: #fafafa;
+  --navbar-more-menu-background-light: #fafafa;
 
-  --searchbar-search-input-background-white: #383838;
-  --searchbar-search-input-hover-background-white: #505050;
-  --searchbar-search-input-white: #fff;
-  --searchbar-result-item-white: #dddddd;
+  --searchbar-search-input-background-light: #fafafa;
+  --searchbar-search-input-hover-background-light: #f6f6f6;
+  --searchbar-search-input-light: #737373;
+  --searchbar-result-item-light: #323232;
+  --searchbar-result-item-hover-light: #c8c8c8;
+
+  --searchbar-search-input-background-dark: #383838;
+  --searchbar-search-input-hover-background-dark: #505050;
 }
 
 /* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-text: var(--vt-c-text-light-1);
-  --section-gap: 160px;
-
-  --navbar-background-color: var(--navbar-background-color-white);
+html[data-theme='dark'] {
+  --color-background: var(--vt-c-black);
+  --color-text: var(--vt-c-text-dark-1);
+  --navbar-background-color: var(--navbar-background-color-dark);
   --navbar-text-color: var(--navbar-text-color-neutral);
   --navbar-text-color-hover: var(--navbar-text-color-hover-neutral);
   --navbar-text-color-active: var(--navbar-text-color-active-neutral);
-  --navbar-more-menu-background-color: var(--navbar-more-menu-background-white);
-  --searchbar-search-input-background-color: var(--searchbar-search-input-background-white);
-  --searchbar-search-input-hover-background-color: var(--searchbar-search-input-hover-background-white);
-  --searchbar-result-item-color: rgb(70, 70, 70);
-  --searchbar-search-input-color: #1a1a1a;
+  --navbar-more-menu-background-color: var(--navbar-more-menu-background-dark);
+  --searchbar-search-input-background-color: var(--searchbar-search-input-background-dark);
+  --searchbar-search-input-hover-background-color: var(--searchbar-search-input-hover-background-dark);
+  --searchbar-search-input-color: var(--searchbar-search-input-light);
+  --searchbar-result-item-color: var(--searchbar-result-item-light);
+  --searchbar-result-item-color-hover: var(--searchbar-result-item-hover-light);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-text: var(--vt-c-text-dark-1);
-    --navbar-background-color: var(--navbar-background-color-dark);
-    --navbar-text-color: var(--navbar-text-color-neutral);
-    --navbar-text-color-hover: var(--navbar-text-color-hover-neutral);
-    --navbar-text-color-active: var(--navbar-text-color-active-neutral);
-    --navbar-more-menu-background-color: var(--navbar-more-menu-background-dark);
-  }
+html[data-theme='light'] {
+  --color-background: var(--vt-c-white);
+  --color-text: var(--vt-c-text-light-1);
+  --navbar-background-color: var(--navbar-background-color-light);
+  --navbar-text-color: var(--navbar-text-color-neutral);
+  --navbar-text-color-hover: var(--navbar-text-color-hover-neutral);
+  --navbar-text-color-active: var(--navbar-text-color-active-neutral);
+  --navbar-more-menu-background-color: var(--navbar-more-menu-background-light);
+  --searchbar-search-input-background-color: var(--searchbar-search-input-background-light);
+  --searchbar-search-input-hover-background-color: var(--searchbar-search-input-hover-background-light);
+  --searchbar-search-input-color: var(--searchbar-search-input-light);
+  --searchbar-result-item-color: var(--searchbar-result-item-light);
+  --searchbar-result-item-color-hover: var(--searchbar-result-item-hover-light);
 }
 
 *,
