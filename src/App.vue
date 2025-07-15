@@ -7,7 +7,7 @@ const route = useRoute();
 
 <template>
   <div id="app">
-    <Navbar v-if="route.path !== '/admin'" />
+    <Navbar v-if="!route.path.startsWith('/admin')" />
     <div class="content">
       <router-view/>
     </div>

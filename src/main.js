@@ -7,6 +7,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { VueFire, VueFireAuth } from 'vuefire'
+import { plugin, defaultConfig } from '@formkit/vue'
+import PrimeVue from 'primevue/config'
+import Aura from '@primeuix/themes/aura'
 
 export const firebaseApp = initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -20,5 +23,11 @@ export const firebaseApp = initializeApp({
 
 createApp(App)
   .use(router)
-  .use(VueFire, { firebaseApp, modules: [ VueFireAuth() ] })
+  .use(VueFire, { firebaseApp, modules: [VueFireAuth()] })
+  .use(plugin, defaultConfig)
+  .use(PrimeVue, {
+    theme: {
+      preset: Aura
+    }
+  })
   .mount('#app')

@@ -22,8 +22,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useFirebaseAuth } from 'vuefire'
+import { getCurrentUser, useFirebaseAuth } from 'vuefire'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+
 
 const auth = useFirebaseAuth()
 const email = ref('')

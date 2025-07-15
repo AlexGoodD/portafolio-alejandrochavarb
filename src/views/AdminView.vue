@@ -1,28 +1,18 @@
 <template>
   <div>
     <Login v-if="!user" />
-    <div v-else>
-      <h1>Contenido protegido</h1>
-      <button @click="logout">Logout</button>
+    <div v-else class="tw:flex">
+      <SideNavbar class="tw:w-64 tw:flex-shrink-0" />
+      <main class="tw:flex-1">
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useCurrentUser } from 'vuefire'
-import { signOut } from 'firebase/auth'
-import { useFirebaseAuth } from 'vuefire'
-
 import Login from '@/components/AdminSection/Login.vue'
-
+import SideNavbar from '@/components/AdminSection/SideNavbar.vue'
+import { useCurrentUser } from 'vuefire'
 const user = useCurrentUser()
-const auth = useFirebaseAuth();
-
-async function logout() {
-  try {
-    await signOut(auth)
-  } catch (error) {
-    console.error('Error signing out:', error)
-  }
-}
 </script>
