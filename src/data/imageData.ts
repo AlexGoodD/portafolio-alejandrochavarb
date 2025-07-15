@@ -1,7 +1,7 @@
 export const imagesEs = [
   {
     id: '1',
-    src: 'https://static-00.iconduck.com/assets.00/flutter-icon-2048x2048-ufx4idi8.png',
+    src: 'https://cdn.prod.website-files.com/5ee12d8d7f840543bde883de/5ef3a1148ac97166a06253c1_flutter-logo-white-inset.svg',
     title: 'Flutter',
     description: 'Framework multiplataforma para desarrollo móvil',
     categories: ['Desarrollo móvil', 'Multiplataforma'],
