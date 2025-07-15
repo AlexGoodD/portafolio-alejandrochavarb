@@ -11,13 +11,15 @@
 
   --navbar-text-color-neutral: #686868;
   --navbar-text-color-hover-neutral: #d0d0d0;
-  --navbar-text-color-active-neutral: #272727;
+  --navbar-text-color-active-light: #2d75dc;
+  --navbar-text-color-active-dark: #81acec;
   --navbar-more-menu-background-dark: #232323;
   --navbar-more-menu-background-light: #fafafa;
 
   --searchbar-search-input-background-light: #fafafa;
   --searchbar-search-input-hover-background-light: #f6f6f6;
-  --searchbar-search-input-light: #737373;
+  --searchbar-search-input-light: #4a4a4a;
+  --searchbar-search-input-dark: #e3e3e3;
   --searchbar-result-item-light: #323232;
   --searchbar-result-item-hover-light: #c8c8c8;
 
@@ -32,11 +34,11 @@ html[data-theme='dark'] {
   --navbar-background-color: var(--navbar-background-color-dark);
   --navbar-text-color: var(--navbar-text-color-neutral);
   --navbar-text-color-hover: var(--navbar-text-color-hover-neutral);
-  --navbar-text-color-active: var(--navbar-text-color-active-neutral);
+  --navbar-text-color-active: var(--navbar-text-color-active-dark);
   --navbar-more-menu-background-color: var(--navbar-more-menu-background-dark);
   --searchbar-search-input-background-color: var(--searchbar-search-input-background-dark);
   --searchbar-search-input-hover-background-color: var(--searchbar-search-input-hover-background-dark);
-  --searchbar-search-input-color: var(--searchbar-search-input-light);
+  --searchbar-search-input-color: var(--searchbar-search-input-dark);
   --searchbar-result-item-color: var(--searchbar-result-item-light);
   --searchbar-result-item-color-hover: var(--searchbar-result-item-hover-light);
 }
@@ -47,7 +49,7 @@ html[data-theme='light'] {
   --navbar-background-color: var(--navbar-background-color-light);
   --navbar-text-color: var(--navbar-text-color-neutral);
   --navbar-text-color-hover: var(--navbar-text-color-hover-neutral);
-  --navbar-text-color-active: var(--navbar-text-color-active-neutral);
+  --navbar-text-color-active: var(--navbar-text-color-active-light);
   --navbar-more-menu-background-color: var(--navbar-more-menu-background-light);
   --searchbar-search-input-background-color: var(--searchbar-search-input-background-light);
   --searchbar-search-input-hover-background-color: var(--searchbar-search-input-hover-background-light);

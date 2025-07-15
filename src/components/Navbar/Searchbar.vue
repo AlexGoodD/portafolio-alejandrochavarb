@@ -1,5 +1,5 @@
 <template>
-  <div class="tw:relative tw:w-[40rem] tw:pb-6">
+  <div class="tw:relative tw:w-[40rem]">
     <div>
       <input
         type="text"

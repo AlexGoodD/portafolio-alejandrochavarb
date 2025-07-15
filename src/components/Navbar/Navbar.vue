@@ -1,15 +1,15 @@
 <template>
   <div
-    class="tw:fixed tw:top-0 tw:left-0 tw:right-0 tw:w-screen tw:bg-[var(--navbar-background-color)] tw:text-white tw:border-b tw:border-[#5a5a5a] tw:z-[1000] tw:py-4 tw:px-6 sm:tw:px-3">
-    <nav class="tw:flex tw:items-start tw:w-full">
-      <img src="../../assets/logo.svg" width="90px" height="10px" alt="logo" />
+    class="tw:fixed tw:top-0 tw:left-0 tw:right-0 tw:w-screen tw:bg-[var(--navbar-background-color)] tw:text-white tw:border-b tw:border-[#5a5a5a] tw:z-[1000] tw:py-4 tw:px-6 tw:px-10">
+    <nav class="tw:flex tw:items-start tw:w-full tw:pt-6">
+      <img src="../../assets/Googol.svg" class="tw:w-[150px] tw:h-[50px] tw:mt-[0.5rem]" alt="logo" />
 
-      <div class="tw:flex tw:flex-col">
-        <div class="tw:w-full tw:flex tw:items-center tw:gap-4 tw:mb-4">
+      <div class="tw:flex tw:flex-col tw:pl-10 tw:w-full">
+        <div class="tw:w-full tw:flex tw:items-center tw:gap-4 tw:pb-6">
           <div class="tw:flex-grow">
             <Searchbar />
           </div>
-          <div class="tw:flex tw:ml-auto tw:mr-8 tw:gap-4 tw:z-[1000]">
+          <div class="tw:flex tw:ml-auto tw:mr-8 tw:gap-10 tw:z-[1000]">
             <!-- Botón cambio de tema TODO: Funcionalidad -->
             <button @click="toggleTheme"
               class="tw:bg-none tw:border-none tw:text-[var(--navbar-text-color)] tw:cursor-pointer tw:text-[17px]">
@@ -24,7 +24,7 @@
         </div>
         <!-- Botones de secciones página TODO: Funcionalidad -->
         <ul
-          class="tw:flex tw:list-none tw:transition-all sm:tw:pl-[75px] xs:tw:pl-0 xs:tw:w-[75%] xs:tw:overflow-x-auto xs:tw:whitespace-nowrap xs:tw:scrollbar-none">
+          class="tw:flex tw:list-none tw:transition-all sm:tw:pl-[75px] tw:pl-2 xs:tw:w-[75%] xs:tw:overflow-x-auto xs:tw:whitespace-nowrap xs:tw:scrollbar-none">
           <div class="tw:flex tw:items-center tw:gap-8 tw:pr-12">
             <li>
               <router-link to="/"

@@ -1,7 +1,8 @@
 <template>
-  <h1>Home</h1>
+  <FirstSearch/>
 </template>
 
 <script setup lang="ts">
 
+import FirstSearch from '@/components/HomeSection/FirstSearch.vue'
 </script>
